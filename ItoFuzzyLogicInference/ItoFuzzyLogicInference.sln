@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItoFuzzyLogicInference", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibrary", "..\InferenceLibrary\InferenceLibrary.csproj", "{BE613BBD-4A72-434A-AB1E-07E1780F2973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibraryTests", "..\InferenceLibraryTests\InferenceLibraryTests.csproj", "{0989E955-459C-4DE6-ADA7-F25C2346E130}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibrary.Tests", "..\InferenceLibraryTests\InferenceLibrary.Tests.csproj", "{0989E955-459C-4DE6-ADA7-F25C2346E130}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItoFuzzyLogicInference.Tests", "ItoFuzzyLogicInference.Tests\ItoFuzzyLogicInference.Tests.csproj", "{B495A770-7974-4D4E-8123-6983D7913284}"
 EndProject
