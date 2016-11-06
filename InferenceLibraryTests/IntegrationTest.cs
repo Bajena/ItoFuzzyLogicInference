@@ -27,7 +27,29 @@ namespace InferenceLibraryTests
             {
                 condition.InputValue = 10;
             }
+            foreach (var condition in rule2.Conditions)
+            {
+                condition.InputValue = 10;
+            }
             Assert.AreEqual(5, inference.Infere());
+            foreach (var condition in rule1.Conditions)
+            {
+                condition.InputValue = 35;
+            }
+            foreach (var condition in rule2.Conditions)
+            {
+                condition.InputValue = 35;
+            }
+            Assert.AreEqual(35, inference.Infere());
+            foreach (var condition in rule1.Conditions)
+            {
+                condition.InputValue = 20;
+            }
+            foreach (var condition in rule2.Conditions)
+            {
+                condition.InputValue = 20;
+            }
+            Assert.AreEqual(0, inference.Infere());
         }
     }
 }
