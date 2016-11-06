@@ -43,7 +43,6 @@
     <Compile Include="Defuzzifier.cs" />
     <Compile Include="Rules\FuzzyConclusion.cs" />
     <Compile Include="Rules\FuzzyCondition.cs" />
-    <Compile Include="Rules\FuzzyPremise.cs" />
     <Compile Include="Rules\FuzzyRule.cs" />
     <Compile Include="Rules\FuzzyRuleEvaluator.cs" />
     <Compile Include="Inference.cs" />

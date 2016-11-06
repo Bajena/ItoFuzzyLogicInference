@@ -4,15 +4,27 @@ using InferenceLibrary.Rules;
 
 namespace InferenceLibrary
 {
+    /// <summary>
+    /// Used for calculating output (sharp) values based on rule conclusion values 
+    /// 
+    /// </summary>
     public class Defuzzifier
     {
-        private IEnumerable<FuzzyConclusion>_conclusions;
+        private readonly IEnumerable<FuzzyConclusion> _conclusions;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="conclusions">Conclusions with calculated premise modifiers</param>
         public Defuzzifier(IEnumerable<FuzzyConclusion> conclusions)
         {
             _conclusions = conclusions;
         }
 
+        /// <summary>
+        /// Calculates output (sharp) value based on rules conclusion values using Mean of Maxima method
+        /// </summary>
+        /// <returns>Numerical value for a linguistic variable</returns>
         public double Defuzzify()
         {
             var minX = _conclusions.Select(c => c.MembershipFunction.Min).Min();
