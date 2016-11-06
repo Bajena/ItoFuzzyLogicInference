@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibrary", "..\Infe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InferenceLibraryTests", "..\InferenceLibraryTests\InferenceLibraryTests.csproj", "{0989E955-459C-4DE6-ADA7-F25C2346E130}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItoFuzzyLogicInference.Tests", "ItoFuzzyLogicInference.Tests\ItoFuzzyLogicInference.Tests.csproj", "{B495A770-7974-4D4E-8123-6983D7913284}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0989E955-459C-4DE6-ADA7-F25C2346E130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0989E955-459C-4DE6-ADA7-F25C2346E130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0989E955-459C-4DE6-ADA7-F25C2346E130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B495A770-7974-4D4E-8123-6983D7913284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B495A770-7974-4D4E-8123-6983D7913284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B495A770-7974-4D4E-8123-6983D7913284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B495A770-7974-4D4E-8123-6983D7913284}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

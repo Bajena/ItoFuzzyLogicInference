@@ -11,6 +11,19 @@ namespace InferenceLibrary
     /// </summary>
     public class LinguisticVariable
     {
+        private IEnumerable<MembershipFunction> _membershipFunctions;
+
+        public LinguisticVariable(string id, string displayName = "", string displayUnit = "")
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                throw new ArgumentException("id must be present");
+            }
+
+            Id = id;
+            DisplayName = displayName;
+        }
+
         public LinguisticVariable(string id, string displayName, IEnumerable<MembershipFunction> membershipFunctions, string displayUnit = "")
         {
             if (string.IsNullOrWhiteSpace(id))
@@ -20,10 +33,6 @@ namespace InferenceLibrary
             if (string.IsNullOrWhiteSpace(displayName))
             {
                 throw new ArgumentException("displayName must be present");
-            }
-            if (membershipFunctions == null || !membershipFunctions.Any())
-            {
-                throw new ArgumentException("membershipFunctions must be present");
             }
             Id = id;
             DisplayName = displayName;
@@ -38,14 +47,26 @@ namespace InferenceLibrary
         /// <summary>
         /// Name for display purposes (e.g. "Salary value")
         /// </summary>
-        public string DisplayName { get; }
+        public string DisplayName { get; set; }
         /// <summary>
         /// Unit for display purposes (e.g. "years")
         /// </summary>
-        public string DisplayUnit { get; private set; }
+        public string DisplayUnit { get; set; }
+
         /// <summary>
         /// Membership functions for this variable - e.g. ("slow", "medium", "fast") for "speed" variable
         /// </summary>
-        public IEnumerable<MembershipFunction> MembershipFunctions { get; private set; }
+        public IEnumerable<MembershipFunction> MembershipFunctions
+        {
+            get { return _membershipFunctions; }
+            set
+            {
+                if (value == null || !value.Any())
+                {
+                    throw new ArgumentException("membershipFunctions must be present");
+                }
+                _membershipFunctions = value;
+            }
+        }
     }
 }

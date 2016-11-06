@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InferenceLibrary;
 
 namespace ItoFuzzyLogicInference
 {
     public partial class Form1 : Form
     {
+        public FuzzyInference FuzzyInference { get; private set; }
+
         public Form1()
         {
             InitializeComponent();

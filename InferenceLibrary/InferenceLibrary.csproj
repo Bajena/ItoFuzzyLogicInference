@@ -45,7 +45,7 @@
     <Compile Include="Rules\FuzzyCondition.cs" />
     <Compile Include="Rules\FuzzyRule.cs" />
     <Compile Include="Rules\FuzzyRuleEvaluator.cs" />
-    <Compile Include="Inference.cs" />
+    <Compile Include="FuzzyInference.cs" />
     <Compile Include="LinguisticVariable.cs" />
     <Compile Include="MembershipFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

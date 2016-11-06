@@ -30,6 +30,11 @@ namespace InferenceLibrary
             {
                 throw new ArgumentException("displayName must be present");
             }
+            if (x2 < x1 || x3 < x2 || x4 < x3)
+            {
+                throw new ArgumentException("Xn must be >= X(n-1)");
+            }
+
             Id = id;
             DisplayName = displayName;
             X1 = x1;
