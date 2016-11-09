@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Młody");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Średni");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Stary");
@@ -51,39 +52,46 @@
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.inputValuesGrid = new System.Windows.Forms.DataGridView();
+            this.linguisticVariableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linguisticVariableValueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linguisticVariableUnitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toggleInferenceDetailsCheckbox = new System.Windows.Forms.CheckBox();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.calculateButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.decisionTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.dataRepositoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.variablesTreeView = new System.Windows.Forms.TreeView();
+            this.membershipFunctionChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.x4UnitLabel = new System.Windows.Forms.Label();
+            this.x3UnitLabel = new System.Windows.Forms.Label();
+            this.x2UnitLabel = new System.Windows.Forms.Label();
+            this.x1UnitLabel = new System.Windows.Forms.Label();
+            this.x4ValueTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.x3ValueTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.x2ValueTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.x1ValueTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.dataRepositoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputValuesGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepositoryBindingSource1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membershipFunctionChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepositoryBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepositoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -94,89 +102,89 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(658, 497);
+            this.tabControl1.Size = new System.Drawing.Size(1159, 497);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.inputValuesGrid);
+            this.tabPage1.Controls.Add(this.toggleInferenceDetailsCheckbox);
+            this.tabPage1.Controls.Add(this.resultLabel);
+            this.tabPage1.Controls.Add(this.calculateButton);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.decisionTypeComboBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(650, 471);
+            this.tabPage1.Size = new System.Drawing.Size(1151, 471);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Obliczenia";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // checkBox1
+            // inputValuesGrid
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(153, 315);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(173, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Wyświetl proces wnioskowania";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.inputValuesGrid.AllowUserToAddRows = false;
+            this.inputValuesGrid.AllowUserToDeleteRows = false;
+            this.inputValuesGrid.AllowUserToResizeRows = false;
+            this.inputValuesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.inputValuesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inputValuesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.linguisticVariableNameColumn,
+            this.linguisticVariableValueColumn,
+            this.linguisticVariableUnitColumn});
+            this.inputValuesGrid.Location = new System.Drawing.Point(21, 71);
+            this.inputValuesGrid.Name = "inputValuesGrid";
+            this.inputValuesGrid.Size = new System.Drawing.Size(377, 160);
+            this.inputValuesGrid.TabIndex = 9;
+            this.inputValuesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label4
+            // linguisticVariableNameColumn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(150, 287);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Wynik to: 300.000 zł";
+            this.linguisticVariableNameColumn.HeaderText = "Nazwa";
+            this.linguisticVariableNameColumn.Name = "linguisticVariableNameColumn";
+            this.linguisticVariableNameColumn.ReadOnly = true;
             // 
-            // button1
+            // linguisticVariableValueColumn
             // 
-            this.button1.Location = new System.Drawing.Point(167, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Oblicz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.linguisticVariableValueColumn.HeaderText = "Wartość";
+            this.linguisticVariableValueColumn.Name = "linguisticVariableValueColumn";
+            this.linguisticVariableValueColumn.ReadOnly = true;
             // 
-            // textBox2
+            // linguisticVariableUnitColumn
             // 
-            this.textBox2.Location = new System.Drawing.Point(21, 183);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(377, 20);
-            this.textBox2.TabIndex = 5;
+            this.linguisticVariableUnitColumn.HeaderText = "Jednostka";
+            this.linguisticVariableUnitColumn.Name = "linguisticVariableUnitColumn";
+            this.linguisticVariableUnitColumn.ReadOnly = true;
             // 
-            // label3
+            // toggleInferenceDetailsCheckbox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Średnie miesięczne wpływy na konto";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.toggleInferenceDetailsCheckbox.AutoSize = true;
+            this.toggleInferenceDetailsCheckbox.Location = new System.Drawing.Point(153, 315);
+            this.toggleInferenceDetailsCheckbox.Name = "toggleInferenceDetailsCheckbox";
+            this.toggleInferenceDetailsCheckbox.Size = new System.Drawing.Size(173, 17);
+            this.toggleInferenceDetailsCheckbox.TabIndex = 8;
+            this.toggleInferenceDetailsCheckbox.Text = "Wyświetl proces wnioskowania";
+            this.toggleInferenceDetailsCheckbox.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // resultLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(377, 20);
-            this.textBox1.TabIndex = 3;
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Location = new System.Drawing.Point(150, 287);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(106, 13);
+            this.resultLabel.TabIndex = 7;
+            this.resultLabel.Text = "Wynik to: 300.000 zł";
             // 
-            // label2
+            // calculateButton
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Wiek";
+            this.calculateButton.Location = new System.Drawing.Point(167, 237);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(75, 23);
+            this.calculateButton.TabIndex = 6;
+            this.calculateButton.Text = "Oblicz";
+            this.calculateButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -188,17 +196,18 @@
             this.label1.Text = "Typ decyzji";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // comboBox1
+            // decisionTypeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Udziel kredytu o wartości...",
-            "Udziel kredytu o racie spłaty...",
-            "Udziel kredytu na okres..."});
-            this.comboBox1.Location = new System.Drawing.Point(21, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(377, 21);
-            this.comboBox1.TabIndex = 0;
+            this.decisionTypeComboBox.DataSource = this.dataRepositoryBindingSource1;
+            this.decisionTypeComboBox.FormattingEnabled = true;
+            this.decisionTypeComboBox.Location = new System.Drawing.Point(21, 37);
+            this.decisionTypeComboBox.Name = "decisionTypeComboBox";
+            this.decisionTypeComboBox.Size = new System.Drawing.Size(377, 21);
+            this.decisionTypeComboBox.TabIndex = 0;
+            // 
+            // dataRepositoryBindingSource1
+            // 
+            this.dataRepositoryBindingSource1.DataSource = typeof(ItoFuzzyLogicInference.DataRepository);
             // 
             // tabPage2
             // 
@@ -206,7 +215,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(650, 471);
+            this.tabPage2.Size = new System.Drawing.Size(1151, 471);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ustawienia";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -219,32 +228,32 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer1.Panel1.Controls.Add(this.variablesTreeView);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.chart1);
-            this.splitContainer1.Panel2.Controls.Add(this.label12);
-            this.splitContainer1.Panel2.Controls.Add(this.label11);
-            this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.label9);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox6);
+            this.splitContainer1.Panel2.Controls.Add(this.membershipFunctionChart);
+            this.splitContainer1.Panel2.Controls.Add(this.x4UnitLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.x3UnitLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.x2UnitLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.x1UnitLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.x4ValueTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.label8);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox5);
+            this.splitContainer1.Panel2.Controls.Add(this.x3ValueTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.label7);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox4);
+            this.splitContainer1.Panel2.Controls.Add(this.x2ValueTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer1.Panel2.Controls.Add(this.x1ValueTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Size = new System.Drawing.Size(644, 465);
-            this.splitContainer1.SplitterDistance = 213;
+            this.splitContainer1.Size = new System.Drawing.Size(1145, 465);
+            this.splitContainer1.SplitterDistance = 378;
             this.splitContainer1.TabIndex = 0;
             // 
-            // treeView1
+            // variablesTreeView
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
+            this.variablesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.variablesTreeView.Location = new System.Drawing.Point(0, 0);
+            this.variablesTreeView.Name = "variablesTreeView";
             treeNode1.Name = "Node1";
             treeNode1.Text = "Młody";
             treeNode2.Name = "Node3";
@@ -261,20 +270,22 @@
             treeNode7.Text = "Wysokie";
             treeNode8.Name = "Node2";
             treeNode8.Text = "Średnie miesięczne wpływy";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            this.variablesTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode4,
             treeNode8});
-            this.treeView1.Size = new System.Drawing.Size(213, 465);
-            this.treeView1.TabIndex = 0;
+            this.variablesTreeView.Size = new System.Drawing.Size(378, 465);
+            this.variablesTreeView.TabIndex = 0;
+            this.variablesTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.variablesTreeView_AfterSelect);
+            this.variablesTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.variablesTreeView_NodeMouseClick);
             // 
-            // chart1
+            // membershipFunctionChart
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.membershipFunctionChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(14, 143);
-            this.chart1.Name = "chart1";
+            this.membershipFunctionChart.Legends.Add(legend1);
+            this.membershipFunctionChart.Location = new System.Drawing.Point(14, 143);
+            this.membershipFunctionChart.Name = "membershipFunctionChart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
@@ -283,53 +294,53 @@
             series1.Points.Add(dataPoint2);
             series1.Points.Add(dataPoint3);
             series1.Points.Add(dataPoint4);
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(408, 300);
-            this.chart1.TabIndex = 16;
-            this.chart1.Text = "chart1";
+            this.membershipFunctionChart.Series.Add(series1);
+            this.membershipFunctionChart.Size = new System.Drawing.Size(408, 300);
+            this.membershipFunctionChart.TabIndex = 16;
+            this.membershipFunctionChart.Text = "membershipFunctionChart";
             // 
-            // label12
+            // x4UnitLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(144, 111);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 13);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "lata";
+            this.x4UnitLabel.AutoSize = true;
+            this.x4UnitLabel.Location = new System.Drawing.Point(144, 111);
+            this.x4UnitLabel.Name = "x4UnitLabel";
+            this.x4UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x4UnitLabel.TabIndex = 15;
+            this.x4UnitLabel.Text = "lata";
             // 
-            // label11
+            // x3UnitLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(144, 79);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "lata";
+            this.x3UnitLabel.AutoSize = true;
+            this.x3UnitLabel.Location = new System.Drawing.Point(144, 79);
+            this.x3UnitLabel.Name = "x3UnitLabel";
+            this.x3UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x3UnitLabel.TabIndex = 14;
+            this.x3UnitLabel.Text = "lata";
             // 
-            // label10
+            // x2UnitLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(144, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "lata";
+            this.x2UnitLabel.AutoSize = true;
+            this.x2UnitLabel.Location = new System.Drawing.Point(144, 45);
+            this.x2UnitLabel.Name = "x2UnitLabel";
+            this.x2UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x2UnitLabel.TabIndex = 13;
+            this.x2UnitLabel.Text = "lata";
             // 
-            // label9
+            // x1UnitLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(144, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "lata";
+            this.x1UnitLabel.AutoSize = true;
+            this.x1UnitLabel.Location = new System.Drawing.Point(144, 12);
+            this.x1UnitLabel.Name = "x1UnitLabel";
+            this.x1UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x1UnitLabel.TabIndex = 12;
+            this.x1UnitLabel.Text = "lata";
             // 
-            // textBox6
+            // x4ValueTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(85, 108);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(53, 20);
-            this.textBox6.TabIndex = 11;
+            this.x4ValueTextBox.Location = new System.Drawing.Point(85, 108);
+            this.x4ValueTextBox.Name = "x4ValueTextBox";
+            this.x4ValueTextBox.Size = new System.Drawing.Size(53, 20);
+            this.x4ValueTextBox.TabIndex = 11;
             // 
             // label8
             // 
@@ -340,12 +351,12 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "x4 (prawe 0):";
             // 
-            // textBox5
+            // x3ValueTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(85, 76);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(53, 20);
-            this.textBox5.TabIndex = 9;
+            this.x3ValueTextBox.Location = new System.Drawing.Point(85, 76);
+            this.x3ValueTextBox.Name = "x3ValueTextBox";
+            this.x3ValueTextBox.Size = new System.Drawing.Size(53, 20);
+            this.x3ValueTextBox.TabIndex = 9;
             // 
             // label7
             // 
@@ -356,12 +367,12 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "x3 (prawa 1):";
             // 
-            // textBox4
+            // x2ValueTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(85, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(53, 20);
-            this.textBox4.TabIndex = 7;
+            this.x2ValueTextBox.Location = new System.Drawing.Point(85, 42);
+            this.x2ValueTextBox.Name = "x2ValueTextBox";
+            this.x2ValueTextBox.Size = new System.Drawing.Size(53, 20);
+            this.x2ValueTextBox.TabIndex = 7;
             // 
             // label6
             // 
@@ -373,12 +384,12 @@
             this.label6.Text = "x2 (lewa 1):";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // textBox3
+            // x1ValueTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(85, 9);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(53, 20);
-            this.textBox3.TabIndex = 5;
+            this.x1ValueTextBox.Location = new System.Drawing.Point(85, 9);
+            this.x1ValueTextBox.Name = "x1ValueTextBox";
+            this.x1ValueTextBox.Size = new System.Drawing.Size(53, 20);
+            this.x1ValueTextBox.TabIndex = 5;
             // 
             // label5
             // 
@@ -389,24 +400,36 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "x1 (lewe 0):";
             // 
-            // Form1
+            // dataRepositoryBindingSource2
+            // 
+            this.dataRepositoryBindingSource2.DataSource = typeof(ItoFuzzyLogicInference.DataRepository);
+            // 
+            // dataRepositoryBindingSource
+            // 
+            this.dataRepositoryBindingSource.DataSource = typeof(ItoFuzzyLogicInference.DataRepository);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 497);
+            this.ClientSize = new System.Drawing.Size(1159, 497);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inputValuesGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepositoryBindingSource1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.membershipFunctionChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepositoryBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRepositoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -416,30 +439,33 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox decisionTypeComboBox;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox toggleInferenceDetailsCheckbox;
+        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TreeView variablesTreeView;
+        private System.Windows.Forms.TextBox x4ValueTextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox x3ValueTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox x2ValueTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox x1ValueTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label x4UnitLabel;
+        private System.Windows.Forms.Label x3UnitLabel;
+        private System.Windows.Forms.Label x2UnitLabel;
+        private System.Windows.Forms.Label x1UnitLabel;
+        private System.Windows.Forms.DataVisualization.Charting.Chart membershipFunctionChart;
+        private System.Windows.Forms.DataGridView inputValuesGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableValueColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableUnitColumn;
+        private System.Windows.Forms.BindingSource dataRepositoryBindingSource;
+        private System.Windows.Forms.BindingSource dataRepositoryBindingSource1;
+        private System.Windows.Forms.BindingSource dataRepositoryBindingSource2;
     }
 }
 

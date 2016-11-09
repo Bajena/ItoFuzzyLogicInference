@@ -14,6 +14,7 @@ namespace ItoFuzzyLogicInference.Tests
             var inference = factory.BuildInference();
             Assert.AreEqual(2, inference.Rules.Count());
             Assert.AreEqual(2, factory.LinguisticVariables.Count());
+            Assert.AreSame(inference.Rules.First().Conditions.First().MembershipFunction.LinguisticVariable, factory.LinguisticVariables.First());
         }
     }
 }

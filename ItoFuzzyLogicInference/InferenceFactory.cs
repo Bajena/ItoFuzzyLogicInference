@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
 using InferenceLibrary;
@@ -31,6 +32,7 @@ namespace ItoFuzzyLogicInference
         public FuzzyInference BuildInference()
         {
             LinguisticVariables = BuildLinguisticVariables();
+
             FuzzyRules = BuildFuzzyRules();
 
             return new FuzzyInference(FuzzyRules);
@@ -38,17 +40,18 @@ namespace ItoFuzzyLogicInference
 
         private IEnumerable<LinguisticVariable> BuildLinguisticVariables()
         {
+
             var variableNodes = _xmlDocument.Descendants("LinguisticVariable");
-            
             return variableNodes.Select(variableNode => new LinguisticVariable(variableNode.Attribute("id")?.Value, variableNode.Attribute("display_name")?.Value, variableNode.Attribute("display_unit")?.Value)
             {
                 MembershipFunctions = BuildMembershipFunctions(variableNode)
-            });
+
+            }).ToList();
         }
 
         private IEnumerable<MembershipFunction> BuildMembershipFunctions(XElement variableElement)
         {
-            return variableElement.Descendants("MembershipFunction").Select(BuildMembershipFunction);
+            return variableElement.Descendants("MembershipFunction").Select(BuildMembershipFunction).ToList();
         }
 
         private MembershipFunction BuildMembershipFunction(XElement functionElement)

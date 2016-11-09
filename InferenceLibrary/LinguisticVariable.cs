@@ -22,6 +22,7 @@ namespace InferenceLibrary
 
             Id = id;
             DisplayName = displayName;
+            DisplayUnit = displayUnit;
         }
 
         public LinguisticVariable(string id, string displayName, IEnumerable<MembershipFunction> membershipFunctions, string displayUnit = "")
@@ -66,6 +67,10 @@ namespace InferenceLibrary
                     throw new ArgumentException("membershipFunctions must be present");
                 }
                 _membershipFunctions = value;
+                foreach (var membershipFunction in _membershipFunctions)
+                {
+                    membershipFunction.LinguisticVariable = this;
+                }
             }
         }
     }

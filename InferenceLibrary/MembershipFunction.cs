@@ -7,6 +7,8 @@ namespace InferenceLibrary
     /// </summary>
     public class MembershipFunction
     {
+        private LinguisticVariable _linguisticVariable;
+
         public MembershipFunction(string id, string displayName)
         {
             if (string.IsNullOrWhiteSpace(id))
@@ -76,6 +78,12 @@ namespace InferenceLibrary
         /// </summary>
         public double Max => X4;
 
+        public LinguisticVariable LinguisticVariable
+        {
+            get { return _linguisticVariable; }
+            set { _linguisticVariable = value; }
+        }
+
         /// <summary>
         /// Calculates a degree of how well does the value fit the semantic value (e.g. how well does value: 60 describe age - "old") 
         /// </summary>
@@ -98,6 +106,11 @@ namespace InferenceLibrary
                 return (X4 - value)/(X4 - X3);
             }
             return 0;
+        }
+
+        public override string ToString()
+        {
+            return DisplayName;
         }
     }
 }
