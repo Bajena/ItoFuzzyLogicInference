@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Text;
 
 namespace InferenceLibrary.Rules
 {
@@ -36,6 +37,23 @@ namespace InferenceLibrary.Rules
         public double Evaluate()
         {
             return new FuzzyRuleEvaluator(this).Evaluate();
+        }
+
+        public string Text
+        {
+            get {
+                var builder = new StringBuilder();
+                builder.Append("JEŻELI ");
+                var condTexts = Conditions.Select(
+                    c => $"{c.MembershipFunction.LinguisticVariable.DisplayName} JEST {c.MembershipFunction.DisplayName}");
+
+                builder.Append(string.Join(" I ", condTexts));
+                builder.Append(" TO ");
+                builder.Append(
+                    $"{Conclusion.MembershipFunction.LinguisticVariable.DisplayName} JEST {Conclusion.MembershipFunction.DisplayName}");
+
+                return builder.ToString();
+            }
         }
     }
 }

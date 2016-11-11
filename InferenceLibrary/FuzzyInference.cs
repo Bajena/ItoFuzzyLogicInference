@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using InferenceLibrary.Rules;
 
@@ -36,6 +37,8 @@ namespace InferenceLibrary
             foreach (FuzzyRule rule in Rules)
             {
                 rule.Conclusion.PremiseModifier = rule.Evaluate();
+                Debug.WriteLine($"Rule: {rule.Text}");
+                Debug.WriteLine($"Wartość: {rule.Conclusion.PremiseModifier}");
             }
 
             //TODO: filter out conclusions with same membership function by MIN

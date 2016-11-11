@@ -3,32 +3,32 @@
   <LinguisticVariables>
     <LinguisticVariable id="water" display_name="Water" display_unit="Celsius degree">
       <MembershipFunction id="cold" display_name="Cold" x1="0" x2="0" x3="10" x4="20"/>
-      <MembershipFunction id="hot" display_name="Hot" x1="20" x2="30" x3="40" x4="40"/>
+      <MembershipFunction id="hot" display_name="Hot" x1="20" x2="30" x3="100" x4="100"/>
     </LinguisticVariable>
-<!--    <LinguisticVariable id="pressure" display_name="Pressure" display_unit="Pascal">-->
-<!--      <MembershipFunction id="small" display_name="Small" x1="0" x2="0" x3="10" x4="20"/>-->
-<!--      <MembershipFunction id="medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>-->
-<!--      <MembershipFunction id="big" display_name="Big" x1="-20" x2="30" x3="40" x4="100"/>-->
-<!--    </LinguisticVariable>-->
+    <LinguisticVariable id="pressure" display_name="Pressure" display_unit="Pascal">
+      <MembershipFunction id="small" display_name="Small" x1="0" x2="0" x3="10" x4="20"/>
+      <MembershipFunction id="medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>
+      <MembershipFunction id="big" display_name="Big" x1="50" x2="60" x3="60" x4="70"/>
+    </LinguisticVariable>
     <LinguisticVariable id="power" display_name="Power" display_unit="Watt">
       <MembershipFunction id="low" display_name="Low" x1="0" x2="0" x3="10" x4="20"/>
       <MembershipFunction id="high" display_name="High" x1="20" x2="30" x3="40" x4="40"/>
     </LinguisticVariable>
   </LinguisticVariables>
   <FuzzyRules>
-    <FuzzyRule>
-      <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="cold"/>
-      </Premise>
-      <Conclusion linguistic_variable_id="power" membership_function_id="low"/>
-    </FuzzyRule>
 <!--    <FuzzyRule>-->
 <!--      <Premise>-->
 <!--        <Condition linguistic_variable_id="water" membership_function_id="cold"/>-->
-<!--        <Condition linguistic_variable_id="pressure" membership_function_id="medium"/>-->
 <!--      </Premise>-->
 <!--      <Conclusion linguistic_variable_id="power" membership_function_id="low"/>-->
 <!--    </FuzzyRule>-->
+    <FuzzyRule>
+      <Premise>
+        <Condition linguistic_variable_id="water" membership_function_id="cold"/>
+        <Condition linguistic_variable_id="pressure" membership_function_id="medium"/>
+      </Premise>
+      <Conclusion linguistic_variable_id="power" membership_function_id="high"/>
+    </FuzzyRule>
     <FuzzyRule>
       <Premise>
         <Condition linguistic_variable_id="water" membership_function_id="hot"/>

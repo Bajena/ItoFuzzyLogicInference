@@ -98,8 +98,6 @@ namespace ItoFuzzyLogicInference
 
         private MembershipFunction FindMembershipFunction(string linguisticVariableId, string membershipFunctionId)
         {
-
-
             var linguisticVariable = LinguisticVariables.First(v => v.Id == linguisticVariableId);
 
             if (linguisticVariable == null)
