@@ -13,6 +13,11 @@ namespace InferenceLibrary
         private readonly IEnumerable<FuzzyConclusion> _conclusions;
 
         /// <summary>
+        /// How many steps should the MinMax linguistic variable range be split into?
+        /// </summary>
+        public const int RangeStepsCount = 100;
+
+        /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="conclusions">Conclusions with calculated premise modifiers</param>
@@ -33,8 +38,12 @@ namespace InferenceLibrary
             var max = 0.0;
             var startMax = 0.0;
             var len = 0.0;
-
-            for (var i = minX; i <= maxX; i += 1)
+            var step = 1.0;
+            if (maxX - minX > 100)
+            {
+                step = (maxX - minX)/RangeStepsCount;
+            }
+            for (var i = minX; i <= maxX; i += step)
             {
                 var maxFuzVal = _conclusions.Select(c => c.PremiseModifier * c.MembershipFunction.Fuzzify(i)).Max();
                 if (max < maxFuzVal)
@@ -45,11 +54,11 @@ namespace InferenceLibrary
                 }
                 else if (max == maxFuzVal && 0 < maxFuzVal)
                 {
-                    len++;
+                    len += step;
                 }
             }
 
-            var mid = startMax + (len / 2.0);
+            var mid = startMax + len / 2.0;
 
             return mid;
         }
