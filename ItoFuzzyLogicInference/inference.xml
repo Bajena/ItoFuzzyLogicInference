@@ -16,12 +16,12 @@
     </LinguisticVariable>
   </LinguisticVariables>
   <FuzzyRules>
-<!--    <FuzzyRule>-->
-<!--      <Premise>-->
-<!--        <Condition linguistic_variable_id="water" membership_function_id="cold"/>-->
-<!--      </Premise>-->
-<!--      <Conclusion linguistic_variable_id="power" membership_function_id="low"/>-->
-<!--    </FuzzyRule>-->
+    <FuzzyRule>
+      <Premise>
+        <Condition linguistic_variable_id="water" membership_function_id="cold"/>
+      </Premise>
+      <Conclusion linguistic_variable_id="power" membership_function_id="low"/>
+    </FuzzyRule>
     <FuzzyRule>
       <Premise>
         <Condition linguistic_variable_id="water" membership_function_id="cold"/>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace InferenceLibrary
 {
@@ -86,21 +87,26 @@ namespace InferenceLibrary
         public double Fuzzify(double value)
         {
             //TODO: Add reverse trapezoid/triangle
-
+            double fuzzified = 0;
             if (X1 <= value && value < X2)
             {
-                return (value - X1)/(X2 - X1);
+                fuzzified = (value - X1)/(X2 - X1);
             }
             if (X2 <= value && value <= X3)
             {
-                return 1;
+                fuzzified = 1;
             }
             if (X3 < value && value <= X4)
             {
-                return (X4 - value)/(X4 - X3);
+                fuzzified = (X4 - value)/(X4 - X3);
             }
-            return 0;
+
+            Debug.WriteLine($"Fuzzified {FullDisplayName} for value {value} is: {fuzzified}");
+
+            return fuzzified;
         }
+
+        public string FullDisplayName => LinguisticVariable.DisplayName + " - " + DisplayName;
 
         public override string ToString()
         {
