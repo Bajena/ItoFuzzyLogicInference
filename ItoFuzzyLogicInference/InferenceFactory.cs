@@ -67,7 +67,7 @@ namespace ItoFuzzyLogicInference
 
         private IEnumerable<FuzzyRule> BuildFuzzyRules()
         {
-            return _xmlDocument.Descendants("FuzzyRule").Select(BuildFuzzyRule);
+            return _xmlDocument.Descendants("FuzzyRule").Select(BuildFuzzyRule).ToList();
         }
 
         private FuzzyRule BuildFuzzyRule(XElement ruleElement)

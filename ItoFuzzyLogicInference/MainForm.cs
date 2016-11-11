@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using InferenceLibrary;
-using InferenceLibrary.Rules;
 
 namespace ItoFuzzyLogicInference
 {
     public partial class MainForm : Form
     {
         private const string ConfigurationFilePath = "inference.xml";
+        private const int VariableInputCellIndex = 1;
 
         public DataRepository DataRepository { get; set; }
         public FuzzyInference FuzzyInference { get; private set; }
@@ -35,7 +29,7 @@ namespace ItoFuzzyLogicInference
             DataRepository.LinguisticVariables = factory.LinguisticVariables;
 
             PopulateDecisionTypeComboBox();
-            PopulateVariableInputs();
+            PopulateVariableInputs((LinguisticVariable)decisionTypeComboBox.SelectedItem);
             PopulateVariableTree();
         }
 
@@ -46,6 +40,7 @@ namespace ItoFuzzyLogicInference
             {
                 variablesTreeView.Nodes.Add(BuildVariableTreeNode(linguisticVariable));
             }
+            FunctionNodeClicked(variablesTreeView.Nodes[0].FirstNode);
         }
 
         private TreeNode BuildVariableTreeNode(LinguisticVariable variable)
@@ -68,47 +63,37 @@ namespace ItoFuzzyLogicInference
             
         }
 
-        private void PopulateVariableInputs()
+        private void PopulateVariableInputs(LinguisticVariable outputVariable)
         {
-//            throw new NotImplementedException();
+            inputValuesGrid.Rows.Clear();
+            foreach (var variable in DataRepository.InputVariables(outputVariable))
+            {
+                var row = new DataGridViewRow {Tag = variable};
+                var nameCell = new DataGridViewTextBoxCell {Value = variable.DisplayName};
+
+                var valueCell = new DataGridViewTextBoxCell
+                {
+                    ValueType = typeof(double),
+                    Value = 1
+                };
+                var unitCell = new DataGridViewTextBoxCell
+                {
+                    Value = variable.DisplayUnit
+                };
+                row.Cells.Add(nameCell);
+                row.Cells.Add(valueCell);
+                row.Cells.Add(unitCell);
+                inputValuesGrid.Rows.Add(row);
+            }
         }
 
         private void PopulateDecisionTypeComboBox()
         {
-            decisionTypeComboBox.DataSource = DataRepository.ConclusionMembershipFunctions.ToList();
+            decisionTypeComboBox.DataSource = DataRepository.ConclusionVariables.ToList();
             decisionTypeComboBox.DisplayMember = "DisplayName";
             decisionTypeComboBox.ValueMember = "Id";
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void variablesTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-        }
-
+        
         private void VariableNodeClicked(TreeNode node)
         {
         }
@@ -142,6 +127,57 @@ namespace ItoFuzzyLogicInference
             {
                 FunctionNodeClicked(e.Node);
             }
+        }
+
+        private void inputValuesGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != VariableInputCellIndex)
+            {
+                return;
+            }
+
+            var row = inputValuesGrid.Rows[e.RowIndex];
+            var cell = row.Cells[e.ColumnIndex];
+            var variable = (LinguisticVariable)row.Tag;
+            var conditions = DataRepository.ConditionsForVariable(variable);
+            foreach (var condition in conditions)
+            {
+                condition.InputValue = double.Parse(cell.Value.ToString());
+            }
+        }
+
+        private void inputValuesGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex != VariableInputCellIndex)
+            {
+                return;
+            }
+            var row = inputValuesGrid.Rows[e.RowIndex];
+            var variable = (LinguisticVariable) row.Tag;
+            double parseResult;
+            var parseSuccess = double.TryParse(e.FormattedValue.ToString(), out parseResult);
+            if (!parseSuccess || parseResult < variable.Min || parseResult > variable.Max)
+            {
+                row.ErrorText = $"Wpisz wartość z przedziału: [{variable.Min}, {variable.Max}]";
+                e.Cancel = true;
+            }
+            else
+            {
+                row.ErrorText = "";
+            }
+        }
+
+        private DataGridViewCell CellFromCoords(int rowIndex, int columnIndex)
+        {
+            var row = inputValuesGrid.Rows[rowIndex];
+            return row.Cells[columnIndex];
+        }
+
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+            var result = FuzzyInference.Infere();
+            resultLabel.Show();
+            resultLabel.Text = result.ToString();
         }
     }
 }

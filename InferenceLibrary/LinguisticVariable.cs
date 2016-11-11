@@ -53,6 +53,14 @@ namespace InferenceLibrary
         /// Unit for display purposes (e.g. "years")
         /// </summary>
         public string DisplayUnit { get; set; }
+        /// <summary>
+        /// Min X value
+        /// </summary>
+        public double Min => MembershipFunctions.Select(m => m.Min).Min();
+        /// <summary>
+        /// Max X value
+        /// </summary>
+        public double Max => MembershipFunctions.Select(m => m.Max).Max();
 
         /// <summary>
         /// Membership functions for this variable - e.g. ("slow", "medium", "fast") for "speed" variable
