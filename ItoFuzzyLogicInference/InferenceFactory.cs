@@ -72,8 +72,8 @@ namespace ItoFuzzyLogicInference
 
         private FuzzyRule BuildFuzzyRule(XElement ruleElement)
         {
-            var conditions = ruleElement.Descendants("Condition").Select(BuildCondition);
-            var conclusion = ruleElement.Descendants("Conclusion").Select(BuildConclusion).First();
+            var conditions = ruleElement.Descendants("Condition").Select(BuildCondition).ToList();
+            var conclusion = ruleElement.Descendants("Conclusion").Select(BuildConclusion).ToList()[0];
 
             return new FuzzyRule(conditions, conclusion);
         }
