@@ -24,20 +24,27 @@ namespace ItoFuzzyLogicInference
         {
             DataRepository = new DataRepository();
             var factory = new InferenceFactory(ConfigurationFilePath);
-            FuzzyInference = factory.BuildInference();
+            factory.LoadData();
             DataRepository.FuzzyRules = factory.FuzzyRules;
             DataRepository.LinguisticVariables = factory.LinguisticVariables;
 
             PopulateDecisionTypeComboBox();
-            PopulateVariableInputs((LinguisticVariable)decisionTypeComboBox.SelectedItem);
             PopulateVariableTree();
+            InitializeInference(DataRepository.ConclusionVariables.First());
+        }
+
+        private void InitializeInference(LinguisticVariable variable)
+        {
+            FuzzyInference = new FuzzyInference(DataRepository.RulesForVariable(variable));
+
+            PopulateVariableInputs(variable);
             PopulateRulesList();
         }
 
         private void PopulateRulesList()
         {
             rulesListBox.Items.Clear();
-            foreach (var fuzzyRule in DataRepository.FuzzyRules)
+            foreach (var fuzzyRule in FuzzyInference.Rules)
             {
                 rulesListBox.Items.Add(fuzzyRule.Text);
             }
@@ -171,12 +178,6 @@ namespace ItoFuzzyLogicInference
             }
         }
 
-        private DataGridViewCell CellFromCoords(int rowIndex, int columnIndex)
-        {
-            var row = inputValuesGrid.Rows[rowIndex];
-            return row.Cells[columnIndex];
-        }
-
         private void calculateButton_Click(object sender, EventArgs e)
         {
             var result = FuzzyInference.Infere();
@@ -237,6 +238,17 @@ namespace ItoFuzzyLogicInference
             membershipFunctionChart.Series.First().Name = function.LinguisticVariable.DisplayName + " - " + function.DisplayName;
             membershipFunctionChart.ChartAreas.First().AxisX.Minimum = function.X1;
             membershipFunctionChart.ChartAreas.First().AxisX.Maximum = function.X4;
+        }
+
+        private void decisionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!DataRepository.Initialized || !this.Visible)
+            {
+                return;
+            }
+            var variable = (LinguisticVariable) decisionTypeComboBox.SelectedItem;
+            
+            InitializeInference(variable);
         }
     }
 }

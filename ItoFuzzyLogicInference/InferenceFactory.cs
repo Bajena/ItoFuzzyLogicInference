@@ -29,13 +29,10 @@ namespace ItoFuzzyLogicInference
             _xmlDocument = XDocument.Load(fileName);
         }
 
-        public FuzzyInference BuildInference()
+        public void LoadData()
         {
             LinguisticVariables = BuildLinguisticVariables();
-
             FuzzyRules = BuildFuzzyRules();
-
-            return new FuzzyInference(FuzzyRules);
         }
 
         private IEnumerable<LinguisticVariable> BuildLinguisticVariables()
