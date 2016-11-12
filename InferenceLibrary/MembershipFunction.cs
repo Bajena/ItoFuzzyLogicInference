@@ -77,6 +77,8 @@ namespace InferenceLibrary
         /// </summary>
         public double Max => X4;
 
+        public bool Inverted { get; set; }
+
         public LinguisticVariable LinguisticVariable { get; set; }
 
         /// <summary>
@@ -86,7 +88,6 @@ namespace InferenceLibrary
         /// <returns></returns>
         public double Fuzzify(double value)
         {
-            //TODO: Add reverse trapezoid/triangle
             double fuzzified = 0;
             if (X1 <= value && value < X2)
             {
@@ -99,6 +100,11 @@ namespace InferenceLibrary
             if (X3 < value && value <= X4)
             {
                 fuzzified = (X4 - value)/(X4 - X3);
+            }
+
+            if (Inverted)
+            {
+                fuzzified = 1 - fuzzified;
             }
 
             Debug.WriteLine($"Fuzzified {FullDisplayName} for value {value} is: {fuzzified}");

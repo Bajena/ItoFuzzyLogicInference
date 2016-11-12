@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using InferenceLibrary;
 
 namespace ItoFuzzyLogicInference
@@ -16,7 +17,6 @@ namespace ItoFuzzyLogicInference
             {
                 MessageBox.Show(this, "Proszę wpisać liczbę rzeczywistą");
                 e.Cancel = true;
-                return;
             }
         }
         
@@ -50,18 +50,22 @@ namespace ItoFuzzyLogicInference
             var function = (MembershipFunction)textBox.Tag;
             function.X4 = double.Parse(textBox.Text);
             UpdateMembershipFunctionChart(function);
+            UpdateXLabels(function.Inverted);
         }
 
         private void UpdateMembershipFunctionChart(MembershipFunction function)
         {
-            membershipFunctionChart.Series.First().Points[0].XValue = function.X1;
-            membershipFunctionChart.Series.First().Points[1].XValue = function.X2;
-            membershipFunctionChart.Series.First().Points[2].XValue = function.X3;
-            membershipFunctionChart.Series.First().Points[3].XValue = function.X4;
-            membershipFunctionChart.Series.First().Name = function.LinguisticVariable.DisplayName + " - " + function.DisplayName;
+            var series = membershipFunctionChart.Series.First();
+            series.Points[0] = new DataPoint(function.X1, function.Inverted ? 1 : 0);
+            series.Points[1] = new DataPoint(function.X2, function.Inverted ? 0 : 1);
+            series.Points[2] = new DataPoint(function.X3, function.Inverted ? 0 : 1);
+            series.Points[3] = new DataPoint(function.X4, function.Inverted ? 1 : 0);
+            
+            series.Name = function.LinguisticVariable.DisplayName + " - " + function.DisplayName;
             membershipFunctionChart.ChartAreas.First().AxisX.Minimum = function.X1;
             membershipFunctionChart.ChartAreas.First().AxisX.Maximum = function.X4;
         }
+
         private void VariableNodeClicked(TreeNode node)
         {
         }
@@ -71,8 +75,11 @@ namespace ItoFuzzyLogicInference
             var function = (MembershipFunction)node.Tag;
             var variable = function.LinguisticVariable;
             x1UnitLabel.Text = x2UnitLabel.Text = x3UnitLabel.Text = x4UnitLabel.Text = variable.DisplayUnit;
+            
+            invertTrapezoidCheckbox.Tag = x1ValueTextBox.Tag = x2ValueTextBox.Tag = x3ValueTextBox.Tag = x4ValueTextBox.Tag = function;
 
-            x1ValueTextBox.Tag = x2ValueTextBox.Tag = x3ValueTextBox.Tag = x4ValueTextBox.Tag = function;
+            invertTrapezoidCheckbox.Checked = function.Inverted;
+
             x1ValueTextBox.Text = function.X1.ToString();
             x2ValueTextBox.Text = function.X2.ToString();
             x3ValueTextBox.Text = function.X3.ToString();
@@ -92,5 +99,30 @@ namespace ItoFuzzyLogicInference
             }
         }
 
+        private void UpdateXLabels(bool inverseTrapezoid)
+        {
+            if (inverseTrapezoid)
+            {
+                x1Label.Text = "x1 (lewa 1):";
+                x2Label.Text = "x2 (lewe 0):";
+                x3Label.Text = "x3 (prawe 0):";
+                x4Label.Text = "x4 (prawa 1):";
+            }
+            else
+            {
+                x1Label.Text = "x1 (lewe 0):";
+                x2Label.Text = "x2 (lewa 1):";
+                x3Label.Text = "x3 (prawa 1):";
+                x4Label.Text = "x4 (prawe 0):";
+            }
+        }
+
+        private void invertTrapezoidCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            var function = (MembershipFunction) invertTrapezoidCheckbox.Tag;
+            function.Inverted = invertTrapezoidCheckbox.Checked;
+            UpdateXLabels(function.Inverted);
+            UpdateMembershipFunctionChart(function);
+        }
     }
 }

@@ -68,6 +68,7 @@
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.variablesTreeView = new System.Windows.Forms.TreeView();
+            this.invertTrapezoidCheckbox = new System.Windows.Forms.CheckBox();
             this.membershipFunctionChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.x4UnitLabel = new System.Windows.Forms.Label();
             this.x3UnitLabel = new System.Windows.Forms.Label();
@@ -253,6 +254,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.invertTrapezoidCheckbox);
             this.splitContainer1.Panel2.Controls.Add(this.membershipFunctionChart);
             this.splitContainer1.Panel2.Controls.Add(this.x4UnitLabel);
             this.splitContainer1.Panel2.Controls.Add(this.x3UnitLabel);
@@ -298,17 +300,31 @@
             this.variablesTreeView.TabIndex = 0;
             this.variablesTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.variablesTreeView_AfterSelect);
             // 
+            // invertTrapezoidCheckbox
+            // 
+            this.invertTrapezoidCheckbox.AutoSize = true;
+            this.invertTrapezoidCheckbox.Location = new System.Drawing.Point(36, 143);
+            this.invertTrapezoidCheckbox.Name = "invertTrapezoidCheckbox";
+            this.invertTrapezoidCheckbox.Size = new System.Drawing.Size(112, 17);
+            this.invertTrapezoidCheckbox.TabIndex = 17;
+            this.invertTrapezoidCheckbox.Text = "Odwrócony trapez";
+            this.invertTrapezoidCheckbox.UseVisualStyleBackColor = true;
+            this.invertTrapezoidCheckbox.CheckedChanged += new System.EventHandler(this.invertTrapezoidCheckbox_CheckedChanged);
+            // 
             // membershipFunctionChart
             // 
             this.membershipFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.AxisY.Maximum = 1D;
+            chartArea1.AxisY.Minimum = 0D;
             chartArea1.Name = "ChartArea1";
             this.membershipFunctionChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.membershipFunctionChart.Legends.Add(legend1);
-            this.membershipFunctionChart.Location = new System.Drawing.Point(14, 134);
+            this.membershipFunctionChart.Location = new System.Drawing.Point(14, 157);
             this.membershipFunctionChart.Name = "membershipFunctionChart";
+            series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
@@ -318,7 +334,7 @@
             series1.Points.Add(dataPoint3);
             series1.Points.Add(dataPoint4);
             this.membershipFunctionChart.Series.Add(series1);
-            this.membershipFunctionChart.Size = new System.Drawing.Size(694, 490);
+            this.membershipFunctionChart.Size = new System.Drawing.Size(694, 467);
             this.membershipFunctionChart.TabIndex = 16;
             this.membershipFunctionChart.Text = "membershipFunctionChart";
             // 
@@ -439,7 +455,7 @@
             this.resultsTabPage.Controls.Add(this.fuzzificationResultListBox);
             this.resultsTabPage.Location = new System.Drawing.Point(4, 22);
             this.resultsTabPage.Name = "resultsTabPage";
-            this.resultsTabPage.Size = new System.Drawing.Size(797, 638);
+            this.resultsTabPage.Size = new System.Drawing.Size(875, 635);
             this.resultsTabPage.TabIndex = 2;
             this.resultsTabPage.Text = "Wnioskowanie";
             this.resultsTabPage.UseVisualStyleBackColor = true;
@@ -467,6 +483,8 @@
             this.aggregatedFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea2.AxisY.Maximum = 1D;
+            chartArea2.AxisY.Minimum = 0D;
             chartArea2.Name = "ChartArea1";
             this.aggregatedFunctionChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -566,6 +584,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart aggregatedFunctionChart;
         private System.Windows.Forms.Label evaluationResultLabel;
         private System.Windows.Forms.Label fuzzificationResultsLabel;
+        private System.Windows.Forms.CheckBox invertTrapezoidCheckbox;
     }
 }
 

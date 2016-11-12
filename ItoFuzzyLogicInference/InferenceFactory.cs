@@ -57,7 +57,10 @@ namespace ItoFuzzyLogicInference
                 double.Parse(functionElement.Attribute("x1")?.Value), 
                 double.Parse(functionElement.Attribute("x2")?.Value),
                 double.Parse(functionElement.Attribute("x3")?.Value),
-                double.Parse(functionElement.Attribute("x4")?.Value));
+                double.Parse(functionElement.Attribute("x4")?.Value))
+            {
+                Inverted = functionElement.Attribute("inverse_trapezoid")?.Value == "true"
+            };
         }
 
         private IEnumerable<FuzzyRule> BuildFuzzyRules()

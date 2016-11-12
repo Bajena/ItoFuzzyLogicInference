@@ -30,12 +30,10 @@ namespace ItoFuzzyLogicInference
                 return;
             }
             var row = inputValuesGrid.Rows[e.RowIndex];
-            var variable = (LinguisticVariable)row.Tag;
             double parseResult;
-            var parseSuccess = double.TryParse(e.FormattedValue.ToString(), out parseResult);
-            if (!parseSuccess || parseResult < variable.Min || parseResult > variable.Max)
+            if (!double.TryParse(e.FormattedValue.ToString(), out parseResult))
             {
-                row.ErrorText = $"Wpisz wartość z przedziału: [{variable.Min}, {variable.Max}]";
+                row.ErrorText = $"Wpisz liczbę rzeczywistą";
                 e.Cancel = true;
             }
             else
