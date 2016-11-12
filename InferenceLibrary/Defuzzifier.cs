@@ -37,8 +37,10 @@ namespace InferenceLibrary
             var maxX = _conclusions.Select(c => c.MembershipFunction.Max).Max();
 
             var max = 0.0;
-            var startMax = 0.0;
+            var currentMaxStart = 0.0;
+            var longestMaxStart = 0.0;
             var len = 0.0;
+            var maxLen = 0.0;
             var step = 1.0;
             if (maxX - minX > 100)
             {
@@ -51,20 +53,35 @@ namespace InferenceLibrary
                 if (max < maxFuzVal)
                 {
                     max = maxFuzVal;
-                    startMax = i;
+                    currentMaxStart = i;
                     len = 0.0;
                 }
                 else if (max == maxFuzVal && 0 < maxFuzVal)
                 {
+                    if (len == 0)
+                    {
+                        currentMaxStart = i - step;
+                    }
                     len += step;
                 }
+                else
+                {
+                    len = 0;
+                }
 
+                if (len >= maxLen)
+                {
+                    longestMaxStart = currentMaxStart;
+                    maxLen = len;
+                }
                 InferenceDetails.Instance.AggregatedFunction.Add(new InferenceDetails.Point(i, maxFuzVal));
-                Debug.WriteLine($"Max fuz: {maxFuzVal}");
-                Debug.WriteLine($"Length: {len}");
+                Debug.WriteLine($"Longest max start: {longestMaxStart}");
+                Debug.WriteLine($"Max length: {maxLen}");
+                Debug.WriteLine($"Max Fuz val: {maxFuzVal}");
+                Debug.WriteLine($"Current length: {len}");
             }
-
-            var mid = startMax + len / 2.0;
+            
+            var mid = longestMaxStart + maxLen / 2.0;
 
             InferenceDetails.Instance.Result = new InferenceDetails.Point(mid, max);
 
