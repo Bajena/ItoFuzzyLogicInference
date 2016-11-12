@@ -72,8 +72,12 @@ namespace ItoFuzzyLogicInference
         {
             var conditions = ruleElement.Descendants("Condition").Select(BuildCondition).ToList();
             var conclusion = ruleElement.Descendants("Conclusion").Select(BuildConclusion).ToList()[0];
+            var ruleOperator = ruleElement.Descendants("Premise").First().Attribute("operator")?.Value == "or" ? ERuleOperator.Or : ERuleOperator.And;
 
-            return new FuzzyRule(conditions, conclusion);
+            return new FuzzyRule(conditions, conclusion)
+            {
+                RuleOperator = ruleOperator
+            };
         }
 
         private FuzzyCondition BuildCondition(XElement conditionElement)

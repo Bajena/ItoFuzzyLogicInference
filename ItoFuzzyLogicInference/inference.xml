@@ -1,50 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FuzzyInference>
   <LinguisticVariables>
-    <LinguisticVariable id="water" display_name="Water" display_unit="Celsius degree">
-      <MembershipFunction id="water_cold" display_name="Cold" x1="0" x2="0" x3="10" x4="20"/>
-      <MembershipFunction id="water_hot" display_name="Hot" x1="20" x2="30" x3="100" x4="100"/>
+    <!--Decision types-->
+    <LinguisticVariable id="h1" display_name="Wielkość kredytu" display_unit="PLN">
+      <MembershipFunction id="h1_100k" display_name="Do 100.000" x1="0" x2="100000" x3="100000" x4="100000"/>
+      <MembershipFunction id="h1_200k" display_name="Do 200.000" x1="100000" x2="200000" x3="200000" x4="200000"/>
+      <MembershipFunction id="h1_400k" display_name="Do 400.000" x1="200000" x2="400000" x3="400000" x4="400000"/>
     </LinguisticVariable>
-    <LinguisticVariable id="pressure" display_name="Pressure" display_unit="Pascal">
-      <MembershipFunction id="pressure_small" display_name="Small" x1="0" x2="0" x3="10" x4="20"/>
-      <MembershipFunction id="pressure_medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>
-      <MembershipFunction id="pressure_big" display_name="Big" x1="50" x2="60" x3="60" x4="70"/>
+    
+    <LinguisticVariable id="h2" display_name="Rata spłaty" display_unit="PLN">
+      <MembershipFunction id="h2_2k" display_name="2.000" x1="0" x2="2000" x3="2000" x4="2000"/>
+      <MembershipFunction id="h2_4k" display_name="4.000" x1="2000" x2="4000" x3="4000" x4="4000"/>
+      <MembershipFunction id="h2_6k" display_name="6.000" x1="4000" x2="6000" x3="6000" x4="6000"/>
     </LinguisticVariable>
-    <LinguisticVariable id="power" display_name="Power" display_unit="Watt">
-      <MembershipFunction id="power_low" display_name="Low" x1="0" x2="0" x3="10" x4="20"/>
-      <MembershipFunction id="power_high" display_name="High" x1="20" x2="30" x3="40" x4="40"/>
+    
+    <LinguisticVariable id="h3" display_name="Czas spłaty" display_unit="lata">
+      <MembershipFunction id="h3_10" display_name="10 lat" x1="0" x2="10" x3="10" x4="10"/>
+      <MembershipFunction id="h3_20" display_name="20 lat" x1="10" x2="20" x3="20" x4="20"/>
+      <MembershipFunction id="h3_30" display_name="30 lat" x1="20" x2="30" x3="30" x4="30"/>
     </LinguisticVariable>
-    <LinguisticVariable id="volume" display_name="Volume" display_unit="cm3">
-      <MembershipFunction id="volume_little" display_name="Little" x1="0" x2="0" x3="20" x4="20"/>
-      <MembershipFunction id="volume_medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>
-      <MembershipFunction id="volume_big" display_name="Big" x1="40" x2="100" x3="500" x4="500" inverse_trapezoid="true"/>
+    
+    <!--Criteria-->
+    <LinguisticVariable id="c1" display_name="Średnie miesięczne wpływy w ostatnim półroczu" display_unit="PLN">
+      <MembershipFunction id="c1_vsmall" display_name="Bardzo niskie" x1="0" x2="0" x3="1000" x4="1500"/>
+      <MembershipFunction id="c1_small" display_name="Niskie" x1="0" x2="1500" x3="2500" x4="3500"/>
+      <MembershipFunction id="c1_average" display_name="Przeciętne" x1="3000" x2="5000" x3="5000" x4="8000"/>
+      <MembershipFunction id="c1_high" display_name="Wysokie" x1="6000" x2="8000" x3="10000" x4="15000"/>
+      <MembershipFunction id="c1_vhigh" display_name="Bardzo wysokie" x1="15000" x2="20000" x3="50000" x4="50000"/>
+    </LinguisticVariable>
+    
+    <LinguisticVariable id="c2" display_name="Suma zarobków klienta i współmałżonka" display_unit="PLN">
+      <MembershipFunction id="c2_vsmall" display_name="Bardzo niskie" x1="0" x2="0" x3="2000" x4="3000"/>
+      <MembershipFunction id="c2_small" display_name="Niskie" x1="0" x2="3000" x3="5000" x4="7000"/>
+      <MembershipFunction id="c2_average" display_name="Przeciętne" x1="6000" x2="10000" x3="10000" x4="16000"/>
+      <MembershipFunction id="c2_high" display_name="Wysokie" x1="12000" x2="16000" x3="16000" x4="30000"/>
+      <MembershipFunction id="c2_vhigh" display_name="Bardzo wysokie" x1="30000" x2="40000" x3="100000" x4="100000"/>
+    </LinguisticVariable>
+
+    <LinguisticVariable id="c3" display_name="Liczba osob na utrzymaniu" display_unit="osoby">
+      <MembershipFunction id="c3_0" display_name="0" x1="0" x2="0" x3="0" x4="0"/>
+      <MembershipFunction id="c3_1_2" display_name="1-2" x1="1" x2="1" x3="2" x4="2"/>
+      <MembershipFunction id="c3_g2" display_name=">2" x1="3" x2="3" x3="10" x4="10"/>
+    </LinguisticVariable>
+    
+    <LinguisticVariable id="c4" display_name="Wiek" display_unit="lata">
+      <MembershipFunction id="c4_young" display_name="Młody" x1="0" x2="25" x3="25" x4="30" inverted="true"/>
+      <MembershipFunction id="c4_middle" display_name="Średni" x1="20" x2="40" x3="40" x4="60"/>
+      <MembershipFunction id="c4_old" display_name="Stary" x1="40" x2="80" x3="80" x4="80"/>
     </LinguisticVariable>
   </LinguisticVariables>
   <FuzzyRules>
+    <!--Wielkość kredytu-->
     <FuzzyRule>
-      <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="water_cold"/>
+      <Premise operator="or">
+        <Condition linguistic_variable_id="c1" membership_function_id="c1_average"/>
+        <Condition linguistic_variable_id="c2" membership_function_id="c2_high"/>
       </Premise>
-      <Conclusion linguistic_variable_id="power" membership_function_id="power_low"/>
+      <Conclusion linguistic_variable_id="h1" membership_function_id="h1_200k"/>
     </FuzzyRule>
     <FuzzyRule>
       <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="water_cold"/>
-        <Condition linguistic_variable_id="pressure" membership_function_id="pressure_medium"/>
+        <Condition linguistic_variable_id="c4" membership_function_id="c4_young"/>
+        <Condition linguistic_variable_id="c1" membership_function_id="c1_high"/>
       </Premise>
-      <Conclusion linguistic_variable_id="power" membership_function_id="power_high"/>
+      <Conclusion linguistic_variable_id="h1" membership_function_id="h1_400k"/>
     </FuzzyRule>
     <FuzzyRule>
       <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="water_hot"/>
+        <Condition linguistic_variable_id="c4" membership_function_id="c4_young"/>
+        <Condition linguistic_variable_id="c1" membership_function_id="c1_high" negated="true"/>
       </Premise>
-      <Conclusion linguistic_variable_id="power" membership_function_id="power_high"/>
-    </FuzzyRule>
-    <FuzzyRule>
-      <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="water_hot" negated="true"/>
-      </Premise>
-      <Conclusion linguistic_variable_id="volume" membership_function_id="volume_big"/>
+      <Conclusion linguistic_variable_id="h1" membership_function_id="h1_100k"/>
     </FuzzyRule>
   </FuzzyRules>
 </FuzzyInference>

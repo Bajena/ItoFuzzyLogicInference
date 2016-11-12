@@ -93,13 +93,17 @@ namespace InferenceLibrary
             {
                 fuzzified = (value - X1)/(X2 - X1);
             }
-            if (X2 <= value && value <= X3)
+            else if (X2 <= value && value <= X3)
             {
                 fuzzified = 1;
             }
-            if (X3 < value && value <= X4)
+            else if (X3 < value && value <= X4)
             {
                 fuzzified = (X4 - value)/(X4 - X3);
+            }
+            else if (value > LinguisticVariable.Max)
+            {
+                fuzzified = 1;
             }
 
             if (Inverted)

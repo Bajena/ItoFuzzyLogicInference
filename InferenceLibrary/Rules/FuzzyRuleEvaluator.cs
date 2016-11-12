@@ -16,7 +16,7 @@ namespace InferenceLibrary.Rules
         /// <returns>Numerical (sharp) value - based on conditions and their input values</returns>
         public double Evaluate()
         {
-            return _rule.Conditions.Min(c => EvaluateCondition(c));
+            return _rule.RuleOperator == ERuleOperator.And ? _rule.Conditions.Min(c => EvaluateCondition(c)) : _rule.Conditions.Max(c => EvaluateCondition(c));
         }
 
         private double EvaluateCondition(FuzzyCondition condition)

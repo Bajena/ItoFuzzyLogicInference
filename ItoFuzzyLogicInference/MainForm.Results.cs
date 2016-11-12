@@ -11,7 +11,8 @@ namespace ItoFuzzyLogicInference
         private void calculateButton_Click(object sender, EventArgs e)
         {
             var result = FuzzyInference.Infere();
-            MessageBox.Show(this, $"Wynik to: {result}");
+            var variable = (LinguisticVariable) decisionTypeComboBox.SelectedItem;
+            MessageBox.Show(this, $"Wynik to: {result} {variable.DisplayUnit}");
             DisplayFuzzificationResults();
             tabControl.SelectTab(resultsTabPage);
         }

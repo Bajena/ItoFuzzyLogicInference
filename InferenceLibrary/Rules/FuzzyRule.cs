@@ -5,6 +5,12 @@ using System.Text;
 
 namespace InferenceLibrary.Rules
 {
+    public enum ERuleOperator
+    {
+        And,
+        Or
+    }
+
     /// <summary>
     /// Represents an (IF-THEN) fuzzy rule 
     /// </summary>
@@ -14,6 +20,8 @@ namespace InferenceLibrary.Rules
         /// IF (left) part of the rule - a set of AND connected conditions
         /// </summary>
         public IEnumerable<FuzzyCondition> Conditions { get; private set; }
+
+        public ERuleOperator RuleOperator { get; set; }
         /// <summary>
         /// THEN (right) part of the rule
         /// </summary>
@@ -28,6 +36,7 @@ namespace InferenceLibrary.Rules
             }
             Conditions = conditions;
             Conclusion = conclusion;
+            RuleOperator = ERuleOperator.And;
         }
 
         /// <summary>
@@ -50,7 +59,7 @@ namespace InferenceLibrary.Rules
                                                      c.Negated ? "NIE JEST" : "JEST",
                                                      c.MembershipFunction.DisplayName));
 
-                builder.Append(string.Join(" I ", condTexts));
+                builder.Append(string.Join(RuleOperator == ERuleOperator.And ? " I " : " LUB ", condTexts));
                 builder.Append(" TO ");
                 builder.Append(
                     $"{Conclusion.MembershipFunction.LinguisticVariable.DisplayName} JEST {Conclusion.MembershipFunction.DisplayName}");
