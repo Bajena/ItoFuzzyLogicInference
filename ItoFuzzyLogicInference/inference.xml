@@ -42,7 +42,7 @@
     </FuzzyRule>
     <FuzzyRule>
       <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="water_hot"/>
+        <Condition linguistic_variable_id="water" membership_function_id="water_hot" negated="true"/>
       </Premise>
       <Conclusion linguistic_variable_id="volume" membership_function_id="volume_big"/>
     </FuzzyRule>

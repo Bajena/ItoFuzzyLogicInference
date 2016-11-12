@@ -81,8 +81,12 @@ namespace ItoFuzzyLogicInference
 
             var linguisticVariableId = conditionElement.Attribute("linguistic_variable_id")?.Value;
             var membershipFunctionId = conditionElement.Attribute("membership_function_id")?.Value;
+            var negated = conditionElement.Attribute("negated")?.Value == "true";
 
-            return new FuzzyCondition(FindMembershipFunction(linguisticVariableId, membershipFunctionId));
+            return new FuzzyCondition(FindMembershipFunction(linguisticVariableId, membershipFunctionId))
+            {
+                Negated = negated
+            };
         }
 
         private FuzzyConclusion BuildConclusion(XElement conclusionElement)

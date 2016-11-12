@@ -16,13 +16,19 @@ namespace InferenceLibrary.Rules
         /// <returns>Numerical (sharp) value - based on conditions and their input values</returns>
         public double Evaluate()
         {
-            return _rule.Conditions.Min(c => FuzzifyCondition(c));
+            return _rule.Conditions.Min(c => EvaluateCondition(c));
         }
 
-        private double FuzzifyCondition(FuzzyCondition c)
+        private double EvaluateCondition(FuzzyCondition condition)
         {
-            var result = c.MembershipFunction.Fuzzify(c.InputValue);
-            InferenceDetails.Instance.FuzzificationResults[c.MembershipFunction] = result;
+            var fuzzified = FuzzifyCondition(condition);
+            return condition.Negated ? 1 - fuzzified : fuzzified;
+        }
+
+        private double FuzzifyCondition(FuzzyCondition condition)
+        {
+            var result = condition.MembershipFunction.Fuzzify(condition.InputValue);
+            InferenceDetails.Instance.FuzzificationResults[condition.MembershipFunction] = result;
             return result;
         }
     }

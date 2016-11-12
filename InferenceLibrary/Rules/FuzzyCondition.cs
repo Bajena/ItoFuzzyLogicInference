@@ -18,5 +18,7 @@
         /// Numerical (sharp) value for the condition
         /// </summary>
         public double InputValue { get; set; }
+
+        public bool Negated { get; set; }
     }
 }

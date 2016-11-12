@@ -45,7 +45,10 @@ namespace InferenceLibrary.Rules
                 var builder = new StringBuilder();
                 builder.Append("JEŻELI ");
                 var condTexts = Conditions.Select(
-                    c => $"{c.MembershipFunction.LinguisticVariable.DisplayName} JEST {c.MembershipFunction.DisplayName}");
+                    c =>
+                        string.Format("{0} {1} {2}", c.MembershipFunction.LinguisticVariable.DisplayName,
+                                                     c.Negated ? "NIE JEST" : "JEST",
+                                                     c.MembershipFunction.DisplayName));
 
                 builder.Append(string.Join(" I ", condTexts));
                 builder.Append(" TO ");
