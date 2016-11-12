@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("Młody");
-            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("Średni");
-            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("Stary");
-            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("Wiek", new System.Windows.Forms.TreeNode[] {
-            treeNode73,
-            treeNode74,
-            treeNode75});
-            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("Małe");
-            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("Średnie");
-            System.Windows.Forms.TreeNode treeNode79 = new System.Windows.Forms.TreeNode("Wysokie");
-            System.Windows.Forms.TreeNode treeNode80 = new System.Windows.Forms.TreeNode("Średnie miesięczne wpływy", new System.Windows.Forms.TreeNode[] {
-            treeNode77,
-            treeNode78,
-            treeNode79});
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint37 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint38 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint39 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint40 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Młody");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Średni");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Stary");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Wiek", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Małe");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Średnie");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Wysokie");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Średnie miesięczne wpływy", new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode6,
+            treeNode7});
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.mainTabPage = new System.Windows.Forms.TabPage();
             this.rulesLabel = new System.Windows.Forms.Label();
@@ -174,9 +174,7 @@
             this.linguisticVariableValueColumn,
             this.linguisticVariableUnitColumn});
             this.inputValuesGrid.Location = new System.Drawing.Point(49, 86);
-            this.inputValuesGrid.MultiSelect = false;
             this.inputValuesGrid.Name = "inputValuesGrid";
-            this.inputValuesGrid.RowHeadersVisible = false;
             this.inputValuesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inputValuesGrid.Size = new System.Drawing.Size(771, 295);
             this.inputValuesGrid.TabIndex = 9;
@@ -238,7 +236,7 @@
             this.settingsTabPage.Location = new System.Drawing.Point(4, 22);
             this.settingsTabPage.Name = "settingsTabPage";
             this.settingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTabPage.Size = new System.Drawing.Size(797, 638);
+            this.settingsTabPage.Size = new System.Drawing.Size(875, 635);
             this.settingsTabPage.TabIndex = 1;
             this.settingsTabPage.Text = "Ustawienia";
             this.settingsTabPage.UseVisualStyleBackColor = true;
@@ -268,8 +266,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.x2Label);
             this.splitContainer1.Panel2.Controls.Add(this.x1ValueTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.x1Label);
-            this.splitContainer1.Size = new System.Drawing.Size(791, 632);
-            this.splitContainer1.SplitterDistance = 139;
+            this.splitContainer1.Size = new System.Drawing.Size(869, 629);
+            this.splitContainer1.SplitterDistance = 152;
             this.splitContainer1.TabIndex = 0;
             // 
             // variablesTreeView
@@ -277,26 +275,26 @@
             this.variablesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.variablesTreeView.Location = new System.Drawing.Point(0, 0);
             this.variablesTreeView.Name = "variablesTreeView";
-            treeNode73.Name = "Node1";
-            treeNode73.Text = "Młody";
-            treeNode74.Name = "Node3";
-            treeNode74.Text = "Średni";
-            treeNode75.Name = "Node4";
-            treeNode75.Text = "Stary";
-            treeNode76.Name = "Node0";
-            treeNode76.Text = "Wiek";
-            treeNode77.Name = "Node5";
-            treeNode77.Text = "Małe";
-            treeNode78.Name = "Node6";
-            treeNode78.Text = "Średnie";
-            treeNode79.Name = "Node7";
-            treeNode79.Text = "Wysokie";
-            treeNode80.Name = "Node2";
-            treeNode80.Text = "Średnie miesięczne wpływy";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Młody";
+            treeNode2.Name = "Node3";
+            treeNode2.Text = "Średni";
+            treeNode3.Name = "Node4";
+            treeNode3.Text = "Stary";
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "Wiek";
+            treeNode5.Name = "Node5";
+            treeNode5.Text = "Małe";
+            treeNode6.Name = "Node6";
+            treeNode6.Text = "Średnie";
+            treeNode7.Name = "Node7";
+            treeNode7.Text = "Wysokie";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "Średnie miesięczne wpływy";
             this.variablesTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode76,
-            treeNode80});
-            this.variablesTreeView.Size = new System.Drawing.Size(139, 632);
+            treeNode4,
+            treeNode8});
+            this.variablesTreeView.Size = new System.Drawing.Size(152, 629);
             this.variablesTreeView.TabIndex = 0;
             this.variablesTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.variablesTreeView_AfterSelect);
             // 
@@ -305,22 +303,22 @@
             this.membershipFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea19.Name = "ChartArea1";
-            this.membershipFunctionChart.ChartAreas.Add(chartArea19);
-            legend19.Name = "Legend1";
-            this.membershipFunctionChart.Legends.Add(legend19);
+            chartArea1.Name = "ChartArea1";
+            this.membershipFunctionChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.membershipFunctionChart.Legends.Add(legend1);
             this.membershipFunctionChart.Location = new System.Drawing.Point(14, 134);
             this.membershipFunctionChart.Name = "membershipFunctionChart";
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series19.Legend = "Legend1";
-            series19.Name = "Series1";
-            series19.Points.Add(dataPoint37);
-            series19.Points.Add(dataPoint38);
-            series19.Points.Add(dataPoint39);
-            series19.Points.Add(dataPoint40);
-            this.membershipFunctionChart.Series.Add(series19);
-            this.membershipFunctionChart.Size = new System.Drawing.Size(629, 493);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            this.membershipFunctionChart.Series.Add(series1);
+            this.membershipFunctionChart.Size = new System.Drawing.Size(694, 490);
             this.membershipFunctionChart.TabIndex = 16;
             this.membershipFunctionChart.Text = "membershipFunctionChart";
             // 
@@ -469,22 +467,22 @@
             this.aggregatedFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea20.Name = "ChartArea1";
-            this.aggregatedFunctionChart.ChartAreas.Add(chartArea20);
-            legend20.Name = "Legend1";
-            this.aggregatedFunctionChart.Legends.Add(legend20);
+            chartArea2.Name = "ChartArea1";
+            this.aggregatedFunctionChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.aggregatedFunctionChart.Legends.Add(legend2);
             this.aggregatedFunctionChart.Location = new System.Drawing.Point(44, 250);
             this.aggregatedFunctionChart.Margin = new System.Windows.Forms.Padding(0);
             this.aggregatedFunctionChart.Name = "aggregatedFunctionChart";
-            series20.ChartArea = "ChartArea1";
-            series20.Legend = "Legend1";
-            series20.Name = "Series1";
-            this.aggregatedFunctionChart.Series.Add(series20);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.aggregatedFunctionChart.Series.Add(series2);
             this.aggregatedFunctionChart.Size = new System.Drawing.Size(688, 356);
             this.aggregatedFunctionChart.TabIndex = 2;
-            title10.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title10.Name = "aggregatedFunctionChartTitle";
-            this.aggregatedFunctionChart.Titles.Add(title10);
+            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title1.Name = "aggregatedFunctionChartTitle";
+            this.aggregatedFunctionChart.Titles.Add(title1);
             // 
             // ruleEvaluationResultListBox
             // 

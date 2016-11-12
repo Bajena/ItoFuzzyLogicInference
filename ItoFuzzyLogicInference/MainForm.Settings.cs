@@ -9,16 +9,17 @@ namespace ItoFuzzyLogicInference
     {
         private void xValueTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
+            var textBox = (TextBox)sender;
             double parseResult;
             var parseSuccess = double.TryParse(textBox.Text, out parseResult);
             if (!parseSuccess)
             {
+                MessageBox.Show(this, "Proszę wpisać liczbę rzeczywistą");
                 e.Cancel = true;
-                MessageBox.Show("Proszę wpisać liczbę rzeczywistą");
+                return;
             }
         }
-
+        
         private void x1ValueTextBox_Validated(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;

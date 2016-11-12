@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using InferenceLibrary;
 
@@ -9,8 +10,10 @@ namespace ItoFuzzyLogicInference
     {
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            FuzzyInference.Infere();
+            var result = FuzzyInference.Infere();
+            MessageBox.Show(this, $"Wynik to: {result}");
             DisplayFuzzificationResults();
+            tabControl.SelectTab(resultsTabPage);
         }
 
         private void DisplayFuzzificationResults()
