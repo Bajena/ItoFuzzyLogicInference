@@ -47,7 +47,7 @@ namespace InferenceLibrary
             for (var i = minX; i <= maxX; i += step)
             {
                 var maxFuzVal = _conclusions.Select(c => c.PremiseModifier * c.MembershipFunction.Fuzzify(i)).Max();
-                //TODO: Add maxFuzVal points to some array in order to draw a chart
+
                 if (max < maxFuzVal)
                 {
                     max = maxFuzVal;
@@ -59,11 +59,14 @@ namespace InferenceLibrary
                     len += step;
                 }
 
+                InferenceDetails.Instance.AggregatedFunction.Add(new InferenceDetails.Point(i, maxFuzVal));
                 Debug.WriteLine($"Max fuz: {maxFuzVal}");
                 Debug.WriteLine($"Length: {len}");
             }
 
             var mid = startMax + len / 2.0;
+
+            InferenceDetails.Instance.Result = new InferenceDetails.Point(mid, max);
 
             return mid;
         }

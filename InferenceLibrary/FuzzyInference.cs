@@ -34,13 +34,15 @@ namespace InferenceLibrary
                 throw new ValuesNotPreparedException();
             }
 
+            InferenceDetails.Reset();
+
             foreach (FuzzyRule rule in Rules)
             {
                 rule.Conclusion.PremiseModifier = rule.Evaluate();
+                InferenceDetails.Instance.RuleEvaluationResults.Add(rule, rule.Conclusion.PremiseModifier);
                 Debug.WriteLine($"Rule: {rule.Text}; Value: {rule.Conclusion.PremiseModifier}");
             }
 
-            //TODO: filter out conclusions with same membership function by MIN
 
             return new Defuzzifier(Rules.Select(r => r.Conclusion)).Defuzzify();
         }

@@ -2,22 +2,22 @@
 <FuzzyInference>
   <LinguisticVariables>
     <LinguisticVariable id="water" display_name="Water" display_unit="Celsius degree">
-      <MembershipFunction id="cold" display_name="Cold" x1="0" x2="0" x3="10" x4="20"/>
-      <MembershipFunction id="hot" display_name="Hot" x1="20" x2="30" x3="100" x4="100"/>
+      <MembershipFunction id="water_cold" display_name="Cold" x1="0" x2="0" x3="10" x4="20"/>
+      <MembershipFunction id="water_hot" display_name="Hot" x1="20" x2="30" x3="100" x4="100"/>
     </LinguisticVariable>
     <LinguisticVariable id="pressure" display_name="Pressure" display_unit="Pascal">
-      <MembershipFunction id="small" display_name="Small" x1="0" x2="0" x3="10" x4="20"/>
-      <MembershipFunction id="medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>
-      <MembershipFunction id="big" display_name="Big" x1="50" x2="60" x3="60" x4="70"/>
+      <MembershipFunction id="pressure_small" display_name="Small" x1="0" x2="0" x3="10" x4="20"/>
+      <MembershipFunction id="pressure_medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>
+      <MembershipFunction id="pressure_big" display_name="Big" x1="50" x2="60" x3="60" x4="70"/>
     </LinguisticVariable>
     <LinguisticVariable id="power" display_name="Power" display_unit="Watt">
-      <MembershipFunction id="low" display_name="Low" x1="0" x2="0" x3="10" x4="20"/>
-      <MembershipFunction id="high" display_name="High" x1="20" x2="30" x3="40" x4="40"/>
+      <MembershipFunction id="power_low" display_name="Low" x1="0" x2="0" x3="10" x4="20"/>
+      <MembershipFunction id="power_high" display_name="High" x1="20" x2="30" x3="40" x4="40"/>
     </LinguisticVariable>
     <LinguisticVariable id="volume" display_name="Volume" display_unit="cm3">
-      <MembershipFunction id="little" display_name="Little" x1="0" x2="0" x3="20" x4="20"/>
-      <MembershipFunction id="medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>
-      <MembershipFunction id="big" display_name="Big" x1="40" x2="100" x3="500" x4="500"/>
+      <MembershipFunction id="volume_little" display_name="Little" x1="0" x2="0" x3="20" x4="20"/>
+      <MembershipFunction id="volume_medium" display_name="Medium" x1="20" x2="30" x3="40" x4="50"/>
+      <MembershipFunction id="volume_big" display_name="Big" x1="40" x2="100" x3="500" x4="500"/>
     </LinguisticVariable>
   </LinguisticVariables>
   <FuzzyRules>
@@ -29,22 +29,22 @@
 <!--    </FuzzyRule>-->
     <FuzzyRule>
       <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="cold"/>
-        <Condition linguistic_variable_id="pressure" membership_function_id="medium"/>
+        <Condition linguistic_variable_id="water" membership_function_id="water_cold"/>
+        <Condition linguistic_variable_id="pressure" membership_function_id="pressure_medium"/>
       </Premise>
-      <Conclusion linguistic_variable_id="power" membership_function_id="high"/>
+      <Conclusion linguistic_variable_id="power" membership_function_id="power_high"/>
     </FuzzyRule>
     <FuzzyRule>
       <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="hot"/>
+        <Condition linguistic_variable_id="water" membership_function_id="water_hot"/>
       </Premise>
-      <Conclusion linguistic_variable_id="power" membership_function_id="high"/>
+      <Conclusion linguistic_variable_id="power" membership_function_id="power_high"/>
     </FuzzyRule>
     <FuzzyRule>
       <Premise>
-        <Condition linguistic_variable_id="water" membership_function_id="hot"/>
+        <Condition linguistic_variable_id="water" membership_function_id="water_hot"/>
       </Premise>
-      <Conclusion linguistic_variable_id="volume" membership_function_id="big"/>
+      <Conclusion linguistic_variable_id="volume" membership_function_id="volume_big"/>
     </FuzzyRule>
   </FuzzyRules>
 </FuzzyInference>

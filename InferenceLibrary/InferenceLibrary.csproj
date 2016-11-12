@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Defuzzifier.cs" />
+    <Compile Include="InferenceDetails.cs" />
     <Compile Include="Rules\FuzzyConclusion.cs" />
     <Compile Include="Rules\FuzzyCondition.cs" />
     <Compile Include="Rules\FuzzyRule.cs" />

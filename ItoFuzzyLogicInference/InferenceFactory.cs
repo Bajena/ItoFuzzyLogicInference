@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
 using InferenceLibrary;
@@ -42,7 +41,6 @@ namespace ItoFuzzyLogicInference
             return variableNodes.Select(variableNode => new LinguisticVariable(variableNode.Attribute("id")?.Value, variableNode.Attribute("display_name")?.Value, variableNode.Attribute("display_unit")?.Value)
             {
                 MembershipFunctions = BuildMembershipFunctions(variableNode)
-
             }).ToList();
         }
 

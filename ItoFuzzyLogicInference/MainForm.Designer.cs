@@ -28,29 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Młody");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Średni");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Stary");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Wiek", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Małe");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Średnie");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Wysokie");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Średnie miesięczne wpływy", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("Młody");
+            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("Średni");
+            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("Stary");
+            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("Wiek", new System.Windows.Forms.TreeNode[] {
+            treeNode73,
+            treeNode74,
+            treeNode75});
+            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("Małe");
+            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("Średnie");
+            System.Windows.Forms.TreeNode treeNode79 = new System.Windows.Forms.TreeNode("Wysokie");
+            System.Windows.Forms.TreeNode treeNode80 = new System.Windows.Forms.TreeNode("Średnie miesięczne wpływy", new System.Windows.Forms.TreeNode[] {
+            treeNode77,
+            treeNode78,
+            treeNode79});
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint37 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint38 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint39 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint40 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.mainTabPage = new System.Windows.Forms.TabPage();
             this.rulesLabel = new System.Windows.Forms.Label();
             this.inputValuesLabel = new System.Windows.Forms.Label();
             this.rulesListBox = new System.Windows.Forms.ListBox();
@@ -58,12 +62,10 @@
             this.linguisticVariableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linguisticVariableValueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linguisticVariableUnitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toggleInferenceDetailsCheckbox = new System.Windows.Forms.CheckBox();
-            this.resultLabel = new System.Windows.Forms.Label();
             this.calculateButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.decisionTypeLabel = new System.Windows.Forms.Label();
             this.decisionTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.variablesTreeView = new System.Windows.Forms.TreeView();
             this.membershipFunctionChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -72,79 +74,89 @@
             this.x2UnitLabel = new System.Windows.Forms.Label();
             this.x1UnitLabel = new System.Windows.Forms.Label();
             this.x4ValueTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.x4Label = new System.Windows.Forms.Label();
             this.x3ValueTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.x3Label = new System.Windows.Forms.Label();
             this.x2ValueTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.x2Label = new System.Windows.Forms.Label();
             this.x1ValueTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.x1Label = new System.Windows.Forms.Label();
+            this.resultsTabPage = new System.Windows.Forms.TabPage();
+            this.evaluationResultLabel = new System.Windows.Forms.Label();
+            this.fuzzificationResultsLabel = new System.Windows.Forms.Label();
+            this.aggregatedFunctionChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ruleEvaluationResultListBox = new System.Windows.Forms.ListBox();
+            this.fuzzificationResultListBox = new System.Windows.Forms.ListBox();
+            this.tabControl.SuspendLayout();
+            this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputValuesGrid)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.settingsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.membershipFunctionChart)).BeginInit();
+            this.resultsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aggregatedFunctionChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(474, 497);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl.Controls.Add(this.mainTabPage);
+            this.tabControl.Controls.Add(this.settingsTabPage);
+            this.tabControl.Controls.Add(this.resultsTabPage);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(883, 661);
+            this.tabControl.TabIndex = 0;
             // 
-            // tabPage1
+            // mainTabPage
             // 
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPage1.Controls.Add(this.rulesLabel);
-            this.tabPage1.Controls.Add(this.inputValuesLabel);
-            this.tabPage1.Controls.Add(this.rulesListBox);
-            this.tabPage1.Controls.Add(this.inputValuesGrid);
-            this.tabPage1.Controls.Add(this.toggleInferenceDetailsCheckbox);
-            this.tabPage1.Controls.Add(this.resultLabel);
-            this.tabPage1.Controls.Add(this.calculateButton);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.decisionTypeComboBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(466, 471);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Obliczenia";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.mainTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainTabPage.Controls.Add(this.rulesLabel);
+            this.mainTabPage.Controls.Add(this.inputValuesLabel);
+            this.mainTabPage.Controls.Add(this.rulesListBox);
+            this.mainTabPage.Controls.Add(this.inputValuesGrid);
+            this.mainTabPage.Controls.Add(this.calculateButton);
+            this.mainTabPage.Controls.Add(this.decisionTypeLabel);
+            this.mainTabPage.Controls.Add(this.decisionTypeComboBox);
+            this.mainTabPage.Location = new System.Drawing.Point(4, 22);
+            this.mainTabPage.Name = "mainTabPage";
+            this.mainTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.mainTabPage.Size = new System.Drawing.Size(875, 635);
+            this.mainTabPage.TabIndex = 0;
+            this.mainTabPage.Text = "Dane";
+            this.mainTabPage.UseVisualStyleBackColor = true;
             // 
             // rulesLabel
             // 
+            this.rulesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rulesLabel.AutoSize = true;
-            this.rulesLabel.Location = new System.Drawing.Point(46, 251);
+            this.rulesLabel.Location = new System.Drawing.Point(46, 387);
             this.rulesLabel.Name = "rulesLabel";
-            this.rulesLabel.Size = new System.Drawing.Size(112, 13);
+            this.rulesLabel.Size = new System.Drawing.Size(115, 13);
             this.rulesLabel.TabIndex = 12;
-            this.rulesLabel.Text = "Reguły wnioskowania";
+            this.rulesLabel.Text = "Reguły wnioskowania:";
             // 
             // inputValuesLabel
             // 
             this.inputValuesLabel.AutoSize = true;
             this.inputValuesLabel.Location = new System.Drawing.Point(46, 70);
             this.inputValuesLabel.Name = "inputValuesLabel";
-            this.inputValuesLabel.Size = new System.Drawing.Size(101, 13);
+            this.inputValuesLabel.Size = new System.Drawing.Size(104, 13);
             this.inputValuesLabel.TabIndex = 11;
-            this.inputValuesLabel.Text = "Wartości wejściowe";
+            this.inputValuesLabel.Text = "Wartości wejściowe:";
             // 
             // rulesListBox
             // 
+            this.rulesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rulesListBox.FormattingEnabled = true;
-            this.rulesListBox.Location = new System.Drawing.Point(49, 267);
+            this.rulesListBox.Location = new System.Drawing.Point(49, 403);
             this.rulesListBox.Name = "rulesListBox";
-            this.rulesListBox.Size = new System.Drawing.Size(377, 95);
+            this.rulesListBox.Size = new System.Drawing.Size(771, 173);
             this.rulesListBox.TabIndex = 10;
             // 
             // inputValuesGrid
@@ -152,6 +164,9 @@
             this.inputValuesGrid.AllowUserToAddRows = false;
             this.inputValuesGrid.AllowUserToDeleteRows = false;
             this.inputValuesGrid.AllowUserToResizeRows = false;
+            this.inputValuesGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputValuesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.inputValuesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inputValuesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -159,8 +174,11 @@
             this.linguisticVariableValueColumn,
             this.linguisticVariableUnitColumn});
             this.inputValuesGrid.Location = new System.Drawing.Point(49, 86);
+            this.inputValuesGrid.MultiSelect = false;
             this.inputValuesGrid.Name = "inputValuesGrid";
-            this.inputValuesGrid.Size = new System.Drawing.Size(377, 160);
+            this.inputValuesGrid.RowHeadersVisible = false;
+            this.inputValuesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.inputValuesGrid.Size = new System.Drawing.Size(771, 295);
             this.inputValuesGrid.TabIndex = 9;
             this.inputValuesGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.inputValuesGrid_CellEndEdit);
             this.inputValuesGrid.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.inputValuesGrid_CellValidating);
@@ -183,29 +201,10 @@
             this.linguisticVariableUnitColumn.Name = "linguisticVariableUnitColumn";
             this.linguisticVariableUnitColumn.ReadOnly = true;
             // 
-            // toggleInferenceDetailsCheckbox
-            // 
-            this.toggleInferenceDetailsCheckbox.AutoSize = true;
-            this.toggleInferenceDetailsCheckbox.Location = new System.Drawing.Point(49, 368);
-            this.toggleInferenceDetailsCheckbox.Name = "toggleInferenceDetailsCheckbox";
-            this.toggleInferenceDetailsCheckbox.Size = new System.Drawing.Size(173, 17);
-            this.toggleInferenceDetailsCheckbox.TabIndex = 8;
-            this.toggleInferenceDetailsCheckbox.Text = "Wyświetl proces wnioskowania";
-            this.toggleInferenceDetailsCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // resultLabel
-            // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(177, 430);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(106, 13);
-            this.resultLabel.TabIndex = 7;
-            this.resultLabel.Text = "Wynik to: 300.000 zł";
-            this.resultLabel.Visible = false;
-            // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(49, 391);
+            this.calculateButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.calculateButton.Location = new System.Drawing.Point(392, 592);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(75, 23);
             this.calculateButton.TabIndex = 6;
@@ -213,34 +212,36 @@
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
-            // label1
+            // decisionTypeLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Typ decyzji";
+            this.decisionTypeLabel.AutoSize = true;
+            this.decisionTypeLabel.Location = new System.Drawing.Point(46, 23);
+            this.decisionTypeLabel.Name = "decisionTypeLabel";
+            this.decisionTypeLabel.Size = new System.Drawing.Size(63, 13);
+            this.decisionTypeLabel.TabIndex = 1;
+            this.decisionTypeLabel.Text = "Typ decyzji:";
             // 
             // decisionTypeComboBox
             // 
+            this.decisionTypeComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.decisionTypeComboBox.FormattingEnabled = true;
             this.decisionTypeComboBox.Location = new System.Drawing.Point(49, 39);
             this.decisionTypeComboBox.Name = "decisionTypeComboBox";
-            this.decisionTypeComboBox.Size = new System.Drawing.Size(377, 21);
+            this.decisionTypeComboBox.Size = new System.Drawing.Size(771, 21);
             this.decisionTypeComboBox.TabIndex = 0;
             this.decisionTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.decisionTypeComboBox_SelectedIndexChanged);
             // 
-            // tabPage2
+            // settingsTabPage
             // 
-            this.tabPage2.Controls.Add(this.splitContainer1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(466, 471);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Ustawienia";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.settingsTabPage.Controls.Add(this.splitContainer1);
+            this.settingsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.settingsTabPage.Name = "settingsTabPage";
+            this.settingsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.settingsTabPage.Size = new System.Drawing.Size(797, 638);
+            this.settingsTabPage.TabIndex = 1;
+            this.settingsTabPage.Text = "Ustawienia";
+            this.settingsTabPage.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -260,15 +261,15 @@
             this.splitContainer1.Panel2.Controls.Add(this.x2UnitLabel);
             this.splitContainer1.Panel2.Controls.Add(this.x1UnitLabel);
             this.splitContainer1.Panel2.Controls.Add(this.x4ValueTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.label8);
+            this.splitContainer1.Panel2.Controls.Add(this.x4Label);
             this.splitContainer1.Panel2.Controls.Add(this.x3ValueTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.label7);
+            this.splitContainer1.Panel2.Controls.Add(this.x3Label);
             this.splitContainer1.Panel2.Controls.Add(this.x2ValueTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.x2Label);
             this.splitContainer1.Panel2.Controls.Add(this.x1ValueTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Size = new System.Drawing.Size(460, 465);
-            this.splitContainer1.SplitterDistance = 81;
+            this.splitContainer1.Panel2.Controls.Add(this.x1Label);
+            this.splitContainer1.Size = new System.Drawing.Size(791, 632);
+            this.splitContainer1.SplitterDistance = 139;
             this.splitContainer1.TabIndex = 0;
             // 
             // variablesTreeView
@@ -276,47 +277,50 @@
             this.variablesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.variablesTreeView.Location = new System.Drawing.Point(0, 0);
             this.variablesTreeView.Name = "variablesTreeView";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Młody";
-            treeNode2.Name = "Node3";
-            treeNode2.Text = "Średni";
-            treeNode3.Name = "Node4";
-            treeNode3.Text = "Stary";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Wiek";
-            treeNode5.Name = "Node5";
-            treeNode5.Text = "Małe";
-            treeNode6.Name = "Node6";
-            treeNode6.Text = "Średnie";
-            treeNode7.Name = "Node7";
-            treeNode7.Text = "Wysokie";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Średnie miesięczne wpływy";
+            treeNode73.Name = "Node1";
+            treeNode73.Text = "Młody";
+            treeNode74.Name = "Node3";
+            treeNode74.Text = "Średni";
+            treeNode75.Name = "Node4";
+            treeNode75.Text = "Stary";
+            treeNode76.Name = "Node0";
+            treeNode76.Text = "Wiek";
+            treeNode77.Name = "Node5";
+            treeNode77.Text = "Małe";
+            treeNode78.Name = "Node6";
+            treeNode78.Text = "Średnie";
+            treeNode79.Name = "Node7";
+            treeNode79.Text = "Wysokie";
+            treeNode80.Name = "Node2";
+            treeNode80.Text = "Średnie miesięczne wpływy";
             this.variablesTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode8});
-            this.variablesTreeView.Size = new System.Drawing.Size(81, 465);
+            treeNode76,
+            treeNode80});
+            this.variablesTreeView.Size = new System.Drawing.Size(139, 632);
             this.variablesTreeView.TabIndex = 0;
             this.variablesTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.variablesTreeView_AfterSelect);
             // 
             // membershipFunctionChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.membershipFunctionChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.membershipFunctionChart.Legends.Add(legend1);
+            this.membershipFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea19.Name = "ChartArea1";
+            this.membershipFunctionChart.ChartAreas.Add(chartArea19);
+            legend19.Name = "Legend1";
+            this.membershipFunctionChart.Legends.Add(legend19);
             this.membershipFunctionChart.Location = new System.Drawing.Point(14, 134);
             this.membershipFunctionChart.Name = "membershipFunctionChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            this.membershipFunctionChart.Series.Add(series1);
-            this.membershipFunctionChart.Size = new System.Drawing.Size(368, 300);
+            series19.ChartArea = "ChartArea1";
+            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series19.Legend = "Legend1";
+            series19.Name = "Series1";
+            series19.Points.Add(dataPoint37);
+            series19.Points.Add(dataPoint38);
+            series19.Points.Add(dataPoint39);
+            series19.Points.Add(dataPoint40);
+            this.membershipFunctionChart.Series.Add(series19);
+            this.membershipFunctionChart.Size = new System.Drawing.Size(629, 493);
             this.membershipFunctionChart.TabIndex = 16;
             this.membershipFunctionChart.Text = "membershipFunctionChart";
             // 
@@ -365,14 +369,14 @@
             this.x4ValueTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.xValueTextBox_Validating);
             this.x4ValueTextBox.Validated += new System.EventHandler(this.x4ValueTextBox_Validated);
             // 
-            // label8
+            // x4Label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 111);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "x4 (prawe 0):";
+            this.x4Label.AutoSize = true;
+            this.x4Label.Location = new System.Drawing.Point(33, 111);
+            this.x4Label.Name = "x4Label";
+            this.x4Label.Size = new System.Drawing.Size(68, 13);
+            this.x4Label.TabIndex = 10;
+            this.x4Label.Text = "x4 (prawe 0):";
             // 
             // x3ValueTextBox
             // 
@@ -383,14 +387,14 @@
             this.x3ValueTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.xValueTextBox_Validating);
             this.x3ValueTextBox.Validated += new System.EventHandler(this.x3ValueTextBox_Validated);
             // 
-            // label7
+            // x3Label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 79);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "x3 (prawa 1):";
+            this.x3Label.AutoSize = true;
+            this.x3Label.Location = new System.Drawing.Point(33, 79);
+            this.x3Label.Name = "x3Label";
+            this.x3Label.Size = new System.Drawing.Size(68, 13);
+            this.x3Label.TabIndex = 8;
+            this.x3Label.Text = "x3 (prawa 1):";
             // 
             // x2ValueTextBox
             // 
@@ -401,14 +405,14 @@
             this.x2ValueTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.xValueTextBox_Validating);
             this.x2ValueTextBox.Validated += new System.EventHandler(this.x2ValueTextBox_Validated);
             // 
-            // label6
+            // x2Label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "x2 (lewa 1):";
+            this.x2Label.AutoSize = true;
+            this.x2Label.Location = new System.Drawing.Point(33, 45);
+            this.x2Label.Name = "x2Label";
+            this.x2Label.Size = new System.Drawing.Size(61, 13);
+            this.x2Label.TabIndex = 6;
+            this.x2Label.Text = "x2 (lewa 1):";
             // 
             // x1ValueTextBox
             // 
@@ -419,58 +423,133 @@
             this.x1ValueTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.xValueTextBox_Validating);
             this.x1ValueTextBox.Validated += new System.EventHandler(this.x1ValueTextBox_Validated);
             // 
-            // label5
+            // x1Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "x1 (lewe 0):";
+            this.x1Label.AutoSize = true;
+            this.x1Label.Location = new System.Drawing.Point(33, 12);
+            this.x1Label.Name = "x1Label";
+            this.x1Label.Size = new System.Drawing.Size(61, 13);
+            this.x1Label.TabIndex = 4;
+            this.x1Label.Text = "x1 (lewe 0):";
+            // 
+            // resultsTabPage
+            // 
+            this.resultsTabPage.Controls.Add(this.evaluationResultLabel);
+            this.resultsTabPage.Controls.Add(this.fuzzificationResultsLabel);
+            this.resultsTabPage.Controls.Add(this.aggregatedFunctionChart);
+            this.resultsTabPage.Controls.Add(this.ruleEvaluationResultListBox);
+            this.resultsTabPage.Controls.Add(this.fuzzificationResultListBox);
+            this.resultsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.resultsTabPage.Name = "resultsTabPage";
+            this.resultsTabPage.Size = new System.Drawing.Size(797, 638);
+            this.resultsTabPage.TabIndex = 2;
+            this.resultsTabPage.Text = "Wnioskowanie";
+            this.resultsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // evaluationResultLabel
+            // 
+            this.evaluationResultLabel.AutoSize = true;
+            this.evaluationResultLabel.Location = new System.Drawing.Point(41, 126);
+            this.evaluationResultLabel.Name = "evaluationResultLabel";
+            this.evaluationResultLabel.Size = new System.Drawing.Size(165, 13);
+            this.evaluationResultLabel.TabIndex = 4;
+            this.evaluationResultLabel.Text = "Wnioskowanie (ewaluacja reguł):";
+            // 
+            // fuzzificationResultsLabel
+            // 
+            this.fuzzificationResultsLabel.AutoSize = true;
+            this.fuzzificationResultsLabel.Location = new System.Drawing.Point(44, 9);
+            this.fuzzificationResultsLabel.Name = "fuzzificationResultsLabel";
+            this.fuzzificationResultsLabel.Size = new System.Drawing.Size(70, 13);
+            this.fuzzificationResultsLabel.TabIndex = 3;
+            this.fuzzificationResultsLabel.Text = "Rozmywanie:";
+            // 
+            // aggregatedFunctionChart
+            // 
+            this.aggregatedFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea20.Name = "ChartArea1";
+            this.aggregatedFunctionChart.ChartAreas.Add(chartArea20);
+            legend20.Name = "Legend1";
+            this.aggregatedFunctionChart.Legends.Add(legend20);
+            this.aggregatedFunctionChart.Location = new System.Drawing.Point(44, 250);
+            this.aggregatedFunctionChart.Margin = new System.Windows.Forms.Padding(0);
+            this.aggregatedFunctionChart.Name = "aggregatedFunctionChart";
+            series20.ChartArea = "ChartArea1";
+            series20.Legend = "Legend1";
+            series20.Name = "Series1";
+            this.aggregatedFunctionChart.Series.Add(series20);
+            this.aggregatedFunctionChart.Size = new System.Drawing.Size(688, 356);
+            this.aggregatedFunctionChart.TabIndex = 2;
+            title10.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title10.Name = "aggregatedFunctionChartTitle";
+            this.aggregatedFunctionChart.Titles.Add(title10);
+            // 
+            // ruleEvaluationResultListBox
+            // 
+            this.ruleEvaluationResultListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ruleEvaluationResultListBox.FormattingEnabled = true;
+            this.ruleEvaluationResultListBox.Location = new System.Drawing.Point(44, 142);
+            this.ruleEvaluationResultListBox.Name = "ruleEvaluationResultListBox";
+            this.ruleEvaluationResultListBox.Size = new System.Drawing.Size(688, 95);
+            this.ruleEvaluationResultListBox.TabIndex = 1;
+            // 
+            // fuzzificationResultListBox
+            // 
+            this.fuzzificationResultListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fuzzificationResultListBox.FormattingEnabled = true;
+            this.fuzzificationResultListBox.Location = new System.Drawing.Point(44, 28);
+            this.fuzzificationResultListBox.Name = "fuzzificationResultListBox";
+            this.fuzzificationResultListBox.Size = new System.Drawing.Size(688, 95);
+            this.fuzzificationResultListBox.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 497);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(883, 661);
+            this.Controls.Add(this.tabControl);
             this.Name = "MainForm";
             this.Text = "Wnioskowanie";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControl.ResumeLayout(false);
+            this.mainTabPage.ResumeLayout(false);
+            this.mainTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputValuesGrid)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.settingsTabPage.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.membershipFunctionChart)).EndInit();
+            this.resultsTabPage.ResumeLayout(false);
+            this.resultsTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aggregatedFunctionChart)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage mainTabPage;
+        private System.Windows.Forms.Label decisionTypeLabel;
         private System.Windows.Forms.ComboBox decisionTypeComboBox;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox toggleInferenceDetailsCheckbox;
-        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.TabPage settingsTabPage;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView variablesTreeView;
         private System.Windows.Forms.TextBox x4ValueTextBox;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label x4Label;
         private System.Windows.Forms.TextBox x3ValueTextBox;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label x3Label;
         private System.Windows.Forms.TextBox x2ValueTextBox;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label x2Label;
         private System.Windows.Forms.TextBox x1ValueTextBox;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label x1Label;
         private System.Windows.Forms.Label x4UnitLabel;
         private System.Windows.Forms.Label x3UnitLabel;
         private System.Windows.Forms.Label x2UnitLabel;
@@ -483,6 +562,12 @@
         private System.Windows.Forms.ListBox rulesListBox;
         private System.Windows.Forms.Label rulesLabel;
         private System.Windows.Forms.Label inputValuesLabel;
+        private System.Windows.Forms.TabPage resultsTabPage;
+        private System.Windows.Forms.ListBox fuzzificationResultListBox;
+        private System.Windows.Forms.ListBox ruleEvaluationResultListBox;
+        private System.Windows.Forms.DataVisualization.Charting.Chart aggregatedFunctionChart;
+        private System.Windows.Forms.Label evaluationResultLabel;
+        private System.Windows.Forms.Label fuzzificationResultsLabel;
     }
 }
 
