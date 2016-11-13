@@ -36,54 +36,58 @@ namespace InferenceLibrary
             var minX = _conclusions.Select(c => c.MembershipFunction.Min).Min();
             var maxX = _conclusions.Select(c => c.MembershipFunction.Max).Max();
 
-            var max = 0.0;
+            var maxFuzzificationValue = 0.0;
             var currentMaxStart = 0.0;
             var longestMaxStart = 0.0;
-            var len = 0.0;
-            var maxLen = 0.0;
+            var currentLength = 0.0;
+            var maxLength = 0.0;
             var step = 1.0;
             if (maxX - minX > 100)
             {
-                step = (maxX - minX)/RangeStepsCount;
+                step = (maxX - minX) / RangeStepsCount;
             }
+
             for (var i = minX; i <= maxX; i += step)
             {
                 var maxFuzVal = _conclusions.Select(c => c.PremiseModifier * c.MembershipFunction.Fuzzify(i)).Max();
 
-                if (max < maxFuzVal)
+                if (maxFuzVal > maxFuzzificationValue) // New max found
                 {
-                    max = maxFuzVal;
+                    maxFuzzificationValue = maxFuzVal;
                     currentMaxStart = i;
-                    len = 0.0;
+                    currentLength = 0.0;
                 }
-                else if (max == maxFuzVal && 0 < maxFuzVal)
+                else if (maxFuzzificationValue == maxFuzVal && 0 < maxFuzVal)
                 {
-                    if (len == 0)
+                    if (currentLength == 0 && i - longestMaxStart > step)
                     {
-                        currentMaxStart = i - step;
+                        currentMaxStart = i;
                     }
-                    len += step;
+                    else
+                    {
+                        currentLength += step;
+                    }
                 }
-                else
+                else // Value is lower than a previous max, reset 
                 {
-                    len = 0;
+                    currentLength = 0;
                 }
 
-                if (len >= maxLen)
+                if (currentLength >= maxLength)
                 {
                     longestMaxStart = currentMaxStart;
-                    maxLen = len;
+                    maxLength = currentLength;
                 }
                 InferenceDetails.Instance.AggregatedFunction.Add(new InferenceDetails.Point(i, maxFuzVal));
                 Debug.WriteLine($"Longest max start: {longestMaxStart}");
-                Debug.WriteLine($"Max length: {maxLen}");
+                Debug.WriteLine($"Max length: {maxLength}");
                 Debug.WriteLine($"Max Fuz val: {maxFuzVal}");
-                Debug.WriteLine($"Current length: {len}");
+                Debug.WriteLine($"Current length: {currentLength}");
             }
             
-            var mid = longestMaxStart + maxLen / 2.0;
+            var mid = longestMaxStart + maxLength / 2.0;
 
-            InferenceDetails.Instance.Result = new InferenceDetails.Point(mid, max);
+            InferenceDetails.Instance.Result = new InferenceDetails.Point(mid, maxFuzzificationValue);
 
             return mid;
         }
