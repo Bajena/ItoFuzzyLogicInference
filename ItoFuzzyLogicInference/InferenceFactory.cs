@@ -59,7 +59,11 @@ namespace ItoFuzzyLogicInference
                 double.Parse(functionElement.Attribute("x3")?.Value),
                 double.Parse(functionElement.Attribute("x4")?.Value))
             {
-                Inverted = functionElement.Attribute("inverse_trapezoid")?.Value == "true"
+                Inverted = functionElement.Attribute("inverse_trapezoid")?.Value == "true",
+                IgnoreX1 = functionElement.Attribute("ignore_x1")?.Value == "true",
+                IgnoreX4 = functionElement.Attribute("ignore_x4")?.Value == "true",
+                IncludeX2 = functionElement.Attribute("include_x2")?.Value != "false",
+                IncludeX3 = functionElement.Attribute("include_x3")?.Value != "false"
             };
         }
 

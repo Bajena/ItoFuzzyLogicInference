@@ -91,7 +91,8 @@ namespace ItoFuzzyLogicInference
 
                 var valueCell = new DataGridViewTextBoxCell
                 {
-                    ValueType = typeof(double)
+                    ValueType = typeof(double),
+                    Value = 0
                 };
                 var unitCell = new DataGridViewTextBoxCell
                 {
