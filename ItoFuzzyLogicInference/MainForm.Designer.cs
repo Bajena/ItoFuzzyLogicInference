@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Młody");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Średni");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Stary");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Wiek", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Małe");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Średnie");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Wysokie");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Średnie miesięczne wpływy", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Młody");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Średni");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Stary");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Wiek", new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Małe");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Średnie");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Wysokie");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Średnie miesięczne wpływy", new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14,
+            treeNode15});
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.mainTabPage = new System.Windows.Forms.TabPage();
             this.rulesLabel = new System.Windows.Forms.Label();
@@ -68,6 +68,10 @@
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.variablesTreeView = new System.Windows.Forms.TreeView();
+            this.includeX3CheckBox = new System.Windows.Forms.CheckBox();
+            this.includeX2CheckBox = new System.Windows.Forms.CheckBox();
+            this.ignoreX4Checkbox = new System.Windows.Forms.CheckBox();
+            this.ignoreX1Checkbox = new System.Windows.Forms.CheckBox();
             this.invertTrapezoidCheckbox = new System.Windows.Forms.CheckBox();
             this.membershipFunctionChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.x4UnitLabel = new System.Windows.Forms.Label();
@@ -254,6 +258,10 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.includeX3CheckBox);
+            this.splitContainer1.Panel2.Controls.Add(this.includeX2CheckBox);
+            this.splitContainer1.Panel2.Controls.Add(this.ignoreX4Checkbox);
+            this.splitContainer1.Panel2.Controls.Add(this.ignoreX1Checkbox);
             this.splitContainer1.Panel2.Controls.Add(this.invertTrapezoidCheckbox);
             this.splitContainer1.Panel2.Controls.Add(this.membershipFunctionChart);
             this.splitContainer1.Panel2.Controls.Add(this.x4UnitLabel);
@@ -277,28 +285,72 @@
             this.variablesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.variablesTreeView.Location = new System.Drawing.Point(0, 0);
             this.variablesTreeView.Name = "variablesTreeView";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Młody";
-            treeNode2.Name = "Node3";
-            treeNode2.Text = "Średni";
-            treeNode3.Name = "Node4";
-            treeNode3.Text = "Stary";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Wiek";
-            treeNode5.Name = "Node5";
-            treeNode5.Text = "Małe";
-            treeNode6.Name = "Node6";
-            treeNode6.Text = "Średnie";
-            treeNode7.Name = "Node7";
-            treeNode7.Text = "Wysokie";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Średnie miesięczne wpływy";
+            treeNode9.Name = "Node1";
+            treeNode9.Text = "Młody";
+            treeNode10.Name = "Node3";
+            treeNode10.Text = "Średni";
+            treeNode11.Name = "Node4";
+            treeNode11.Text = "Stary";
+            treeNode12.Name = "Node0";
+            treeNode12.Text = "Wiek";
+            treeNode13.Name = "Node5";
+            treeNode13.Text = "Małe";
+            treeNode14.Name = "Node6";
+            treeNode14.Text = "Średnie";
+            treeNode15.Name = "Node7";
+            treeNode15.Text = "Wysokie";
+            treeNode16.Name = "Node2";
+            treeNode16.Text = "Średnie miesięczne wpływy";
             this.variablesTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode8});
+            treeNode12,
+            treeNode16});
             this.variablesTreeView.Size = new System.Drawing.Size(152, 629);
             this.variablesTreeView.TabIndex = 0;
             this.variablesTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.variablesTreeView_AfterSelect);
+            // 
+            // includeX3CheckBox
+            // 
+            this.includeX3CheckBox.AutoSize = true;
+            this.includeX3CheckBox.Location = new System.Drawing.Point(196, 77);
+            this.includeX3CheckBox.Name = "includeX3CheckBox";
+            this.includeX3CheckBox.Size = new System.Drawing.Size(87, 17);
+            this.includeX3CheckBox.TabIndex = 21;
+            this.includeX3CheckBox.Text = "W przedziale";
+            this.includeX3CheckBox.UseVisualStyleBackColor = true;
+            this.includeX3CheckBox.CheckedChanged += new System.EventHandler(this.includeX3CheckBox_CheckedChanged);
+            // 
+            // includeX2CheckBox
+            // 
+            this.includeX2CheckBox.AutoSize = true;
+            this.includeX2CheckBox.Location = new System.Drawing.Point(196, 44);
+            this.includeX2CheckBox.Name = "includeX2CheckBox";
+            this.includeX2CheckBox.Size = new System.Drawing.Size(87, 17);
+            this.includeX2CheckBox.TabIndex = 20;
+            this.includeX2CheckBox.Text = "W przedziale";
+            this.includeX2CheckBox.UseVisualStyleBackColor = true;
+            this.includeX2CheckBox.CheckedChanged += new System.EventHandler(this.includeX2CheckBox_CheckedChanged);
+            // 
+            // ignoreX4Checkbox
+            // 
+            this.ignoreX4Checkbox.AutoSize = true;
+            this.ignoreX4Checkbox.Location = new System.Drawing.Point(196, 111);
+            this.ignoreX4Checkbox.Name = "ignoreX4Checkbox";
+            this.ignoreX4Checkbox.Size = new System.Drawing.Size(105, 17);
+            this.ignoreX4Checkbox.TabIndex = 19;
+            this.ignoreX4Checkbox.Text = "Nieskończoność";
+            this.ignoreX4Checkbox.UseVisualStyleBackColor = true;
+            this.ignoreX4Checkbox.CheckedChanged += new System.EventHandler(this.ignoreX4Checkbox_CheckedChanged);
+            // 
+            // ignoreX1Checkbox
+            // 
+            this.ignoreX1Checkbox.AutoSize = true;
+            this.ignoreX1Checkbox.Location = new System.Drawing.Point(196, 12);
+            this.ignoreX1Checkbox.Name = "ignoreX1Checkbox";
+            this.ignoreX1Checkbox.Size = new System.Drawing.Size(105, 17);
+            this.ignoreX1Checkbox.TabIndex = 18;
+            this.ignoreX1Checkbox.Text = "Nieskończoność";
+            this.ignoreX1Checkbox.UseVisualStyleBackColor = true;
+            this.ignoreX1Checkbox.CheckedChanged += new System.EventHandler(this.ignoreX1Checkbox_CheckedChanged);
             // 
             // invertTrapezoidCheckbox
             // 
@@ -316,24 +368,24 @@
             this.membershipFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.AxisY.Maximum = 1D;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.Name = "ChartArea1";
-            this.membershipFunctionChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.membershipFunctionChart.Legends.Add(legend1);
+            chartArea3.AxisY.Maximum = 1D;
+            chartArea3.AxisY.Minimum = 0D;
+            chartArea3.Name = "ChartArea1";
+            this.membershipFunctionChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.membershipFunctionChart.Legends.Add(legend3);
             this.membershipFunctionChart.Location = new System.Drawing.Point(14, 157);
             this.membershipFunctionChart.Name = "membershipFunctionChart";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            this.membershipFunctionChart.Series.Add(series1);
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.Points.Add(dataPoint5);
+            series3.Points.Add(dataPoint6);
+            series3.Points.Add(dataPoint7);
+            series3.Points.Add(dataPoint8);
+            this.membershipFunctionChart.Series.Add(series3);
             this.membershipFunctionChart.Size = new System.Drawing.Size(694, 467);
             this.membershipFunctionChart.TabIndex = 16;
             this.membershipFunctionChart.Text = "membershipFunctionChart";
@@ -483,24 +535,24 @@
             this.aggregatedFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.AxisY.Maximum = 1D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.Name = "ChartArea1";
-            this.aggregatedFunctionChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.aggregatedFunctionChart.Legends.Add(legend2);
+            chartArea4.AxisY.Maximum = 1D;
+            chartArea4.AxisY.Minimum = 0D;
+            chartArea4.Name = "ChartArea1";
+            this.aggregatedFunctionChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.aggregatedFunctionChart.Legends.Add(legend4);
             this.aggregatedFunctionChart.Location = new System.Drawing.Point(44, 250);
             this.aggregatedFunctionChart.Margin = new System.Windows.Forms.Padding(0);
             this.aggregatedFunctionChart.Name = "aggregatedFunctionChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.aggregatedFunctionChart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.aggregatedFunctionChart.Series.Add(series4);
             this.aggregatedFunctionChart.Size = new System.Drawing.Size(688, 356);
             this.aggregatedFunctionChart.TabIndex = 2;
-            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title1.Name = "aggregatedFunctionChartTitle";
-            this.aggregatedFunctionChart.Titles.Add(title1);
+            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title2.Name = "aggregatedFunctionChartTitle";
+            this.aggregatedFunctionChart.Titles.Add(title2);
             // 
             // ruleEvaluationResultListBox
             // 
@@ -585,6 +637,10 @@
         private System.Windows.Forms.Label evaluationResultLabel;
         private System.Windows.Forms.Label fuzzificationResultsLabel;
         private System.Windows.Forms.CheckBox invertTrapezoidCheckbox;
+        private System.Windows.Forms.CheckBox ignoreX4Checkbox;
+        private System.Windows.Forms.CheckBox ignoreX1Checkbox;
+        private System.Windows.Forms.CheckBox includeX3CheckBox;
+        private System.Windows.Forms.CheckBox includeX2CheckBox;
     }
 }
 

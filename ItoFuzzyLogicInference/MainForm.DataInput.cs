@@ -48,7 +48,7 @@ namespace ItoFuzzyLogicInference
             {
                 return;
             }
-            var variable = (LinguisticVariable)decisionTypeComboBox.SelectedItem;
+            var variable = CurrentVariable();
 
             InitializeInference(variable);
         }

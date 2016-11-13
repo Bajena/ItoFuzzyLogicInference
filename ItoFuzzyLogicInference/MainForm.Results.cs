@@ -11,7 +11,7 @@ namespace ItoFuzzyLogicInference
         private void calculateButton_Click(object sender, EventArgs e)
         {
             var result = FuzzyInference.Infere();
-            var variable = (LinguisticVariable) decisionTypeComboBox.SelectedItem;
+            var variable = CurrentVariable();
             MessageBox.Show(this, $"Wynik to: {result} {variable.DisplayUnit}");
             DisplayFuzzificationResults();
             tabControl.SelectTab(resultsTabPage);
@@ -19,7 +19,7 @@ namespace ItoFuzzyLogicInference
 
         private void DisplayFuzzificationResults()
         {
-            var currentVariable = (LinguisticVariable) decisionTypeComboBox.SelectedItem;
+            var currentVariable = CurrentVariable();
 
             fuzzificationResultListBox.Items.Clear();
             ruleEvaluationResultListBox.Items.Clear();
@@ -49,6 +49,8 @@ namespace ItoFuzzyLogicInference
             aggregatedFunctionChart.Series.Add(functionSeries);
             aggregatedFunctionChart.Series.Add(resultSeries);
             aggregatedFunctionChart.Titles.First().Text = $"{currentVariable.DisplayName} ({currentVariable.DisplayUnit})";
+            aggregatedFunctionChart.ChartAreas.First().AxisX.Minimum = currentVariable.Min;
+            aggregatedFunctionChart.ChartAreas.First().AxisX.Maximum = currentVariable.Max;
 
             if (!tabControl.TabPages.Contains(resultsTabPage))
             {

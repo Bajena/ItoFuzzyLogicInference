@@ -25,7 +25,7 @@ namespace ItoFuzzyLogicInference
             TextBox textBox = (TextBox)sender;
             var function = (MembershipFunction)textBox.Tag;
             function.X1 = double.Parse(textBox.Text);
-            UpdateMembershipFunctionChart(function);
+            UpdateFunctionControls(function);
         }
 
         private void x2ValueTextBox_Validated(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ItoFuzzyLogicInference
             TextBox textBox = (TextBox)sender;
             var function = (MembershipFunction)textBox.Tag;
             function.X2 = double.Parse(textBox.Text);
-            UpdateMembershipFunctionChart(function);
+            UpdateFunctionControls(function);
         }
 
         private void x3ValueTextBox_Validated(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace ItoFuzzyLogicInference
             TextBox textBox = (TextBox)sender;
             var function = (MembershipFunction)textBox.Tag;
             function.X3 = double.Parse(textBox.Text);
-            UpdateMembershipFunctionChart(function);
+            UpdateFunctionControls(function);
         }
 
         private void x4ValueTextBox_Validated(object sender, EventArgs e)
@@ -49,18 +49,31 @@ namespace ItoFuzzyLogicInference
             TextBox textBox = (TextBox)sender;
             var function = (MembershipFunction)textBox.Tag;
             function.X4 = double.Parse(textBox.Text);
-            UpdateMembershipFunctionChart(function);
+            UpdateFunctionControls(function);
+        }
+
+        void UpdateFunctionControls(MembershipFunction function)
+        {
             UpdateXLabels(function.Inverted);
+            UpdateMembershipFunctionChart(function);
+            UpdateRangeCheckBoxes(function);
         }
 
         private void UpdateMembershipFunctionChart(MembershipFunction function)
         {
             var series = membershipFunctionChart.Series.First();
-            series.Points[0] = new DataPoint(function.X1, function.Inverted ? 1 : 0);
-            series.Points[1] = new DataPoint(function.X2, function.Inverted ? 0 : 1);
-            series.Points[2] = new DataPoint(function.X3, function.Inverted ? 0 : 1);
-            series.Points[3] = new DataPoint(function.X4, function.Inverted ? 1 : 0);
-            
+            series.Points.Clear();
+            if (function.X1 != function.X2 || !function.IncludeX3)
+            {
+                series.Points.AddXY(function.X1, function.Inverted ? 1 : 0);
+            }
+            series.Points.AddXY(function.X2, function.Inverted ? 0 : 1);
+            series.Points.AddXY(function.X3, function.Inverted ? 0 : 1);
+            if (function.X3 != function.X4 || !function.IncludeX3)
+            {
+                series.Points.AddXY(function.X4, function.Inverted ? 1 : 0);
+            }
+
             series.Name = function.LinguisticVariable.DisplayName + " - " + function.DisplayName;
             membershipFunctionChart.ChartAreas.First().AxisX.Minimum = function.X1;
             membershipFunctionChart.ChartAreas.First().AxisX.Maximum = function.X4;
@@ -76,7 +89,7 @@ namespace ItoFuzzyLogicInference
             var variable = function.LinguisticVariable;
             x1UnitLabel.Text = x2UnitLabel.Text = x3UnitLabel.Text = x4UnitLabel.Text = variable.DisplayUnit;
             
-            invertTrapezoidCheckbox.Tag = x1ValueTextBox.Tag = x2ValueTextBox.Tag = x3ValueTextBox.Tag = x4ValueTextBox.Tag = function;
+            ignoreX1Checkbox.Tag = ignoreX4Checkbox.Tag = includeX2CheckBox.Tag = includeX3CheckBox.Tag = invertTrapezoidCheckbox.Tag = x1ValueTextBox.Tag = x2ValueTextBox.Tag = x3ValueTextBox.Tag = x4ValueTextBox.Tag = function;
 
             invertTrapezoidCheckbox.Checked = function.Inverted;
 
@@ -84,7 +97,7 @@ namespace ItoFuzzyLogicInference
             x2ValueTextBox.Text = function.X2.ToString();
             x3ValueTextBox.Text = function.X3.ToString();
             x4ValueTextBox.Text = function.X4.ToString();
-            UpdateMembershipFunctionChart(function);
+            UpdateFunctionControls(function);
         }
 
         private void variablesTreeView_AfterSelect(object sender, TreeViewEventArgs e)
@@ -117,12 +130,72 @@ namespace ItoFuzzyLogicInference
             }
         }
 
+        private void UpdateRangeCheckBoxes(MembershipFunction function)
+        {
+            if (function.X1 == function.X2)
+            {
+                ignoreX1Checkbox.Show();
+                ignoreX1Checkbox.Checked = function.IgnoreX1;
+                includeX2CheckBox.Show();
+                includeX2CheckBox.Checked = function.IncludeX2;
+            }
+            else
+            {
+                ignoreX1Checkbox.Hide();
+                includeX2CheckBox.Hide();
+            }
+
+            if (function.X3 == function.X4)
+            {
+                ignoreX4Checkbox.Show();
+                ignoreX4Checkbox.Checked = function.IgnoreX4;
+                includeX3CheckBox.Show();
+                includeX3CheckBox.Checked = function.IncludeX3;
+            }
+            else
+            {
+                ignoreX4Checkbox.Hide();
+                includeX3CheckBox.Hide();
+            }
+        }
+
         private void invertTrapezoidCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             var function = (MembershipFunction) invertTrapezoidCheckbox.Tag;
             function.Inverted = invertTrapezoidCheckbox.Checked;
-            UpdateXLabels(function.Inverted);
-            UpdateMembershipFunctionChart(function);
+            UpdateFunctionControls(function);
+        }
+        
+        private void ignoreX1Checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkBox = sender as CheckBox;
+            var function = (MembershipFunction) checkBox.Tag;
+            function.IgnoreX1 = checkBox.Checked;
+            UpdateFunctionControls(function);
+        }
+
+        private void ignoreX4Checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkBox = sender as CheckBox;
+            var function = (MembershipFunction)checkBox.Tag;
+            function.IgnoreX4 = checkBox.Checked;
+            UpdateFunctionControls(function);
+        }
+
+        private void includeX2CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkBox = sender as CheckBox;
+            var function = (MembershipFunction)checkBox.Tag;
+            function.IncludeX2 = checkBox.Checked;
+            UpdateFunctionControls(function);
+        }
+
+        private void includeX3CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            var checkBox = sender as CheckBox;
+            var function = (MembershipFunction)checkBox.Tag;
+            function.IncludeX3 = checkBox.Checked;
+            UpdateFunctionControls(function);
         }
     }
 }

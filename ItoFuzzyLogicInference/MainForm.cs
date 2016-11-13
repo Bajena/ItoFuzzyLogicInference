@@ -110,5 +110,10 @@ namespace ItoFuzzyLogicInference
             decisionTypeComboBox.DisplayMember = "DisplayName";
             decisionTypeComboBox.ValueMember = "Id";
         }
+
+        private LinguisticVariable CurrentVariable()
+        {
+            return (LinguisticVariable)decisionTypeComboBox.SelectedItem;
+        }
     }
 }
