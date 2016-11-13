@@ -1,4 +1,5 @@
 # Fuzzy Logic Inference
+![pl_gif](https://cloud.githubusercontent.com/assets/5732023/20246236/0b06d02e-a9b3-11e6-9b5e-89a0f5d6e547.gif)
 
 This project was created as an academic excercise related to fuzzy logic inference (Inteligent Calculation Methods on Warsaw University of Technology).
 
@@ -22,4 +23,3 @@ An example inference process can be found in the integration tests directory.
 * Allows setting membership functions ranges and draws their charts
 * Displays all defined rules in a human readable format
 * Shows all inference process - fuzzification, rules evaluation and aggregated membership chart together with a defuzzification result
-
