@@ -33,7 +33,7 @@ namespace ItoFuzzyLogicInference
             double parseResult;
             if (!double.TryParse(e.FormattedValue.ToString(), out parseResult))
             {
-                row.ErrorText = $"Wpisz liczbę rzeczywistą";
+                row.ErrorText = $"Enter a real number!";
                 e.Cancel = true;
             }
             else

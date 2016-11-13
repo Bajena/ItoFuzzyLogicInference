@@ -28,40 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Młody");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Średni");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Stary");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Wiek", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Małe");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Średnie");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Wysokie");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Średnie miesięczne wpływy", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Young");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Middle");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Old");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Age", new System.Windows.Forms.TreeNode[] {
             treeNode5,
             treeNode6,
             treeNode7});
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(20D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(30D, 1D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(40D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.mainTabPage = new System.Windows.Forms.TabPage();
             this.rulesLabel = new System.Windows.Forms.Label();
             this.inputValuesLabel = new System.Windows.Forms.Label();
             this.rulesListBox = new System.Windows.Forms.ListBox();
             this.inputValuesGrid = new System.Windows.Forms.DataGridView();
-            this.linguisticVariableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.linguisticVariableValueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.linguisticVariableUnitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calculateButton = new System.Windows.Forms.Button();
             this.decisionTypeLabel = new System.Windows.Forms.Label();
             this.decisionTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -92,6 +82,9 @@
             this.aggregatedFunctionChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ruleEvaluationResultListBox = new System.Windows.Forms.ListBox();
             this.fuzzificationResultListBox = new System.Windows.Forms.ListBox();
+            this.linguisticVariableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linguisticVariableValueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linguisticVariableUnitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputValuesGrid)).BeginInit();
@@ -132,7 +125,7 @@
             this.mainTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.mainTabPage.Size = new System.Drawing.Size(875, 635);
             this.mainTabPage.TabIndex = 0;
-            this.mainTabPage.Text = "Dane";
+            this.mainTabPage.Text = "Data";
             this.mainTabPage.UseVisualStyleBackColor = true;
             // 
             // rulesLabel
@@ -141,18 +134,18 @@
             this.rulesLabel.AutoSize = true;
             this.rulesLabel.Location = new System.Drawing.Point(46, 387);
             this.rulesLabel.Name = "rulesLabel";
-            this.rulesLabel.Size = new System.Drawing.Size(115, 13);
+            this.rulesLabel.Size = new System.Drawing.Size(80, 13);
             this.rulesLabel.TabIndex = 12;
-            this.rulesLabel.Text = "Reguły wnioskowania:";
+            this.rulesLabel.Text = "Inference rules:";
             // 
             // inputValuesLabel
             // 
             this.inputValuesLabel.AutoSize = true;
             this.inputValuesLabel.Location = new System.Drawing.Point(46, 70);
             this.inputValuesLabel.Name = "inputValuesLabel";
-            this.inputValuesLabel.Size = new System.Drawing.Size(104, 13);
+            this.inputValuesLabel.Size = new System.Drawing.Size(68, 13);
             this.inputValuesLabel.TabIndex = 11;
-            this.inputValuesLabel.Text = "Wartości wejściowe:";
+            this.inputValuesLabel.Text = "Input values:";
             // 
             // rulesListBox
             // 
@@ -186,24 +179,6 @@
             this.inputValuesGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.inputValuesGrid_CellEndEdit);
             this.inputValuesGrid.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.inputValuesGrid_CellValidating);
             // 
-            // linguisticVariableNameColumn
-            // 
-            this.linguisticVariableNameColumn.HeaderText = "Nazwa";
-            this.linguisticVariableNameColumn.Name = "linguisticVariableNameColumn";
-            this.linguisticVariableNameColumn.ReadOnly = true;
-            // 
-            // linguisticVariableValueColumn
-            // 
-            this.linguisticVariableValueColumn.HeaderText = "Wartość";
-            this.linguisticVariableValueColumn.Name = "linguisticVariableValueColumn";
-            this.linguisticVariableValueColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // linguisticVariableUnitColumn
-            // 
-            this.linguisticVariableUnitColumn.HeaderText = "Jednostka";
-            this.linguisticVariableUnitColumn.Name = "linguisticVariableUnitColumn";
-            this.linguisticVariableUnitColumn.ReadOnly = true;
-            // 
             // calculateButton
             // 
             this.calculateButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -211,7 +186,7 @@
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(75, 23);
             this.calculateButton.TabIndex = 6;
-            this.calculateButton.Text = "Oblicz";
+            this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
@@ -220,9 +195,9 @@
             this.decisionTypeLabel.AutoSize = true;
             this.decisionTypeLabel.Location = new System.Drawing.Point(46, 23);
             this.decisionTypeLabel.Name = "decisionTypeLabel";
-            this.decisionTypeLabel.Size = new System.Drawing.Size(63, 13);
+            this.decisionTypeLabel.Size = new System.Drawing.Size(74, 13);
             this.decisionTypeLabel.TabIndex = 1;
-            this.decisionTypeLabel.Text = "Typ decyzji:";
+            this.decisionTypeLabel.Text = "Decision type:";
             // 
             // decisionTypeComboBox
             // 
@@ -244,7 +219,7 @@
             this.settingsTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.settingsTabPage.Size = new System.Drawing.Size(875, 635);
             this.settingsTabPage.TabIndex = 1;
-            this.settingsTabPage.Text = "Ustawienia";
+            this.settingsTabPage.Text = "Settings";
             this.settingsTabPage.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
@@ -286,24 +261,15 @@
             this.variablesTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.variablesTreeView.Location = new System.Drawing.Point(0, 0);
             this.variablesTreeView.Name = "variablesTreeView";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Młody";
-            treeNode2.Name = "Node3";
-            treeNode2.Text = "Średni";
-            treeNode3.Name = "Node4";
-            treeNode3.Text = "Stary";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Wiek";
-            treeNode5.Name = "Node5";
-            treeNode5.Text = "Małe";
-            treeNode6.Name = "Node6";
-            treeNode6.Text = "Średnie";
-            treeNode7.Name = "Node7";
-            treeNode7.Text = "Wysokie";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Średnie miesięczne wpływy";
+            treeNode5.Name = "Node1";
+            treeNode5.Text = "Young";
+            treeNode6.Name = "Node3";
+            treeNode6.Text = "Middle";
+            treeNode7.Name = "Node4";
+            treeNode7.Text = "Old";
+            treeNode8.Name = "Node0";
+            treeNode8.Text = "Age";
             this.variablesTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
             treeNode8});
             this.variablesTreeView.Size = new System.Drawing.Size(152, 629);
             this.variablesTreeView.TabIndex = 0;
@@ -314,9 +280,9 @@
             this.includeX3CheckBox.AutoSize = true;
             this.includeX3CheckBox.Location = new System.Drawing.Point(211, 77);
             this.includeX3CheckBox.Name = "includeX3CheckBox";
-            this.includeX3CheckBox.Size = new System.Drawing.Size(87, 17);
+            this.includeX3CheckBox.Size = new System.Drawing.Size(65, 17);
             this.includeX3CheckBox.TabIndex = 21;
-            this.includeX3CheckBox.Text = "W przedziale";
+            this.includeX3CheckBox.Text = "In range";
             this.includeX3CheckBox.UseVisualStyleBackColor = true;
             this.includeX3CheckBox.CheckedChanged += new System.EventHandler(this.includeX3CheckBox_CheckedChanged);
             // 
@@ -325,9 +291,9 @@
             this.includeX2CheckBox.AutoSize = true;
             this.includeX2CheckBox.Location = new System.Drawing.Point(211, 44);
             this.includeX2CheckBox.Name = "includeX2CheckBox";
-            this.includeX2CheckBox.Size = new System.Drawing.Size(87, 17);
+            this.includeX2CheckBox.Size = new System.Drawing.Size(65, 17);
             this.includeX2CheckBox.TabIndex = 20;
-            this.includeX2CheckBox.Text = "W przedziale";
+            this.includeX2CheckBox.Text = "In range";
             this.includeX2CheckBox.UseVisualStyleBackColor = true;
             this.includeX2CheckBox.CheckedChanged += new System.EventHandler(this.includeX2CheckBox_CheckedChanged);
             // 
@@ -336,9 +302,9 @@
             this.ignoreX4Checkbox.AutoSize = true;
             this.ignoreX4Checkbox.Location = new System.Drawing.Point(211, 111);
             this.ignoreX4Checkbox.Name = "ignoreX4Checkbox";
-            this.ignoreX4Checkbox.Size = new System.Drawing.Size(105, 17);
+            this.ignoreX4Checkbox.Size = new System.Drawing.Size(57, 17);
             this.ignoreX4Checkbox.TabIndex = 19;
-            this.ignoreX4Checkbox.Text = "Nieskończoność";
+            this.ignoreX4Checkbox.Text = "Infinite";
             this.ignoreX4Checkbox.UseVisualStyleBackColor = true;
             this.ignoreX4Checkbox.CheckedChanged += new System.EventHandler(this.ignoreX4Checkbox_CheckedChanged);
             // 
@@ -347,9 +313,9 @@
             this.ignoreX1Checkbox.AutoSize = true;
             this.ignoreX1Checkbox.Location = new System.Drawing.Point(211, 12);
             this.ignoreX1Checkbox.Name = "ignoreX1Checkbox";
-            this.ignoreX1Checkbox.Size = new System.Drawing.Size(105, 17);
+            this.ignoreX1Checkbox.Size = new System.Drawing.Size(57, 17);
             this.ignoreX1Checkbox.TabIndex = 18;
-            this.ignoreX1Checkbox.Text = "Nieskończoność";
+            this.ignoreX1Checkbox.Text = "Infinite";
             this.ignoreX1Checkbox.UseVisualStyleBackColor = true;
             this.ignoreX1Checkbox.CheckedChanged += new System.EventHandler(this.ignoreX1Checkbox_CheckedChanged);
             // 
@@ -358,9 +324,9 @@
             this.invertTrapezoidCheckbox.AutoSize = true;
             this.invertTrapezoidCheckbox.Location = new System.Drawing.Point(36, 143);
             this.invertTrapezoidCheckbox.Name = "invertTrapezoidCheckbox";
-            this.invertTrapezoidCheckbox.Size = new System.Drawing.Size(112, 17);
+            this.invertTrapezoidCheckbox.Size = new System.Drawing.Size(107, 17);
             this.invertTrapezoidCheckbox.TabIndex = 17;
-            this.invertTrapezoidCheckbox.Text = "Odwrócony trapez";
+            this.invertTrapezoidCheckbox.Text = "Inverse trapezoid";
             this.invertTrapezoidCheckbox.UseVisualStyleBackColor = true;
             this.invertTrapezoidCheckbox.CheckedChanged += new System.EventHandler(this.invertTrapezoidCheckbox_CheckedChanged);
             // 
@@ -369,24 +335,24 @@
             this.membershipFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.AxisY.Maximum = 1D;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.Name = "ChartArea1";
-            this.membershipFunctionChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.membershipFunctionChart.Legends.Add(legend1);
+            chartArea3.AxisY.Maximum = 1D;
+            chartArea3.AxisY.Minimum = 0D;
+            chartArea3.Name = "ChartArea1";
+            this.membershipFunctionChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.membershipFunctionChart.Legends.Add(legend3);
             this.membershipFunctionChart.Location = new System.Drawing.Point(14, 157);
             this.membershipFunctionChart.Name = "membershipFunctionChart";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            this.membershipFunctionChart.Series.Add(series1);
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.Points.Add(dataPoint5);
+            series3.Points.Add(dataPoint6);
+            series3.Points.Add(dataPoint7);
+            series3.Points.Add(dataPoint8);
+            this.membershipFunctionChart.Series.Add(series3);
             this.membershipFunctionChart.Size = new System.Drawing.Size(694, 467);
             this.membershipFunctionChart.TabIndex = 16;
             this.membershipFunctionChart.Text = "membershipFunctionChart";
@@ -396,36 +362,36 @@
             this.x4UnitLabel.AutoSize = true;
             this.x4UnitLabel.Location = new System.Drawing.Point(166, 111);
             this.x4UnitLabel.Name = "x4UnitLabel";
-            this.x4UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x4UnitLabel.Size = new System.Drawing.Size(32, 13);
             this.x4UnitLabel.TabIndex = 15;
-            this.x4UnitLabel.Text = "lata";
+            this.x4UnitLabel.Text = "years";
             // 
             // x3UnitLabel
             // 
             this.x3UnitLabel.AutoSize = true;
             this.x3UnitLabel.Location = new System.Drawing.Point(166, 79);
             this.x3UnitLabel.Name = "x3UnitLabel";
-            this.x3UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x3UnitLabel.Size = new System.Drawing.Size(32, 13);
             this.x3UnitLabel.TabIndex = 14;
-            this.x3UnitLabel.Text = "lata";
+            this.x3UnitLabel.Text = "years";
             // 
             // x2UnitLabel
             // 
             this.x2UnitLabel.AutoSize = true;
             this.x2UnitLabel.Location = new System.Drawing.Point(166, 45);
             this.x2UnitLabel.Name = "x2UnitLabel";
-            this.x2UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x2UnitLabel.Size = new System.Drawing.Size(32, 13);
             this.x2UnitLabel.TabIndex = 13;
-            this.x2UnitLabel.Text = "lata";
+            this.x2UnitLabel.Text = "years";
             // 
             // x1UnitLabel
             // 
             this.x1UnitLabel.AutoSize = true;
             this.x1UnitLabel.Location = new System.Drawing.Point(166, 12);
             this.x1UnitLabel.Name = "x1UnitLabel";
-            this.x1UnitLabel.Size = new System.Drawing.Size(24, 13);
+            this.x1UnitLabel.Size = new System.Drawing.Size(32, 13);
             this.x1UnitLabel.TabIndex = 12;
-            this.x1UnitLabel.Text = "lata";
+            this.x1UnitLabel.Text = "years";
             // 
             // x4ValueTextBox
             // 
@@ -441,9 +407,9 @@
             this.x4Label.AutoSize = true;
             this.x4Label.Location = new System.Drawing.Point(33, 111);
             this.x4Label.Name = "x4Label";
-            this.x4Label.Size = new System.Drawing.Size(68, 13);
+            this.x4Label.Size = new System.Drawing.Size(59, 13);
             this.x4Label.TabIndex = 10;
-            this.x4Label.Text = "x4 (prawe 0):";
+            this.x4Label.Text = "x4 (right 0):";
             // 
             // x3ValueTextBox
             // 
@@ -459,9 +425,9 @@
             this.x3Label.AutoSize = true;
             this.x3Label.Location = new System.Drawing.Point(33, 79);
             this.x3Label.Name = "x3Label";
-            this.x3Label.Size = new System.Drawing.Size(68, 13);
+            this.x3Label.Size = new System.Drawing.Size(59, 13);
             this.x3Label.TabIndex = 8;
-            this.x3Label.Text = "x3 (prawa 1):";
+            this.x3Label.Text = "x3 (right 1):";
             // 
             // x2ValueTextBox
             // 
@@ -477,9 +443,9 @@
             this.x2Label.AutoSize = true;
             this.x2Label.Location = new System.Drawing.Point(33, 45);
             this.x2Label.Name = "x2Label";
-            this.x2Label.Size = new System.Drawing.Size(61, 13);
+            this.x2Label.Size = new System.Drawing.Size(53, 13);
             this.x2Label.TabIndex = 6;
-            this.x2Label.Text = "x2 (lewa 1):";
+            this.x2Label.Text = "x2 (left 1):";
             // 
             // x1ValueTextBox
             // 
@@ -495,9 +461,9 @@
             this.x1Label.AutoSize = true;
             this.x1Label.Location = new System.Drawing.Point(33, 12);
             this.x1Label.Name = "x1Label";
-            this.x1Label.Size = new System.Drawing.Size(61, 13);
+            this.x1Label.Size = new System.Drawing.Size(53, 13);
             this.x1Label.TabIndex = 4;
-            this.x1Label.Text = "x1 (lewe 0):";
+            this.x1Label.Text = "x1 (left 0):";
             // 
             // resultsTabPage
             // 
@@ -510,7 +476,7 @@
             this.resultsTabPage.Name = "resultsTabPage";
             this.resultsTabPage.Size = new System.Drawing.Size(875, 635);
             this.resultsTabPage.TabIndex = 2;
-            this.resultsTabPage.Text = "Wnioskowanie";
+            this.resultsTabPage.Text = "Results";
             this.resultsTabPage.UseVisualStyleBackColor = true;
             // 
             // evaluationResultLabel
@@ -518,42 +484,42 @@
             this.evaluationResultLabel.AutoSize = true;
             this.evaluationResultLabel.Location = new System.Drawing.Point(41, 126);
             this.evaluationResultLabel.Name = "evaluationResultLabel";
-            this.evaluationResultLabel.Size = new System.Drawing.Size(165, 13);
+            this.evaluationResultLabel.Size = new System.Drawing.Size(84, 13);
             this.evaluationResultLabel.TabIndex = 4;
-            this.evaluationResultLabel.Text = "Wnioskowanie (ewaluacja reguł):";
+            this.evaluationResultLabel.Text = "Rule evaluation:";
             // 
             // fuzzificationResultsLabel
             // 
             this.fuzzificationResultsLabel.AutoSize = true;
             this.fuzzificationResultsLabel.Location = new System.Drawing.Point(44, 9);
             this.fuzzificationResultsLabel.Name = "fuzzificationResultsLabel";
-            this.fuzzificationResultsLabel.Size = new System.Drawing.Size(70, 13);
+            this.fuzzificationResultsLabel.Size = new System.Drawing.Size(68, 13);
             this.fuzzificationResultsLabel.TabIndex = 3;
-            this.fuzzificationResultsLabel.Text = "Rozmywanie:";
+            this.fuzzificationResultsLabel.Text = "Fuzzification:";
             // 
             // aggregatedFunctionChart
             // 
             this.aggregatedFunctionChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.AxisY.Maximum = 1D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.Name = "ChartArea1";
-            this.aggregatedFunctionChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.aggregatedFunctionChart.Legends.Add(legend2);
+            chartArea4.AxisY.Maximum = 1D;
+            chartArea4.AxisY.Minimum = 0D;
+            chartArea4.Name = "ChartArea1";
+            this.aggregatedFunctionChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.aggregatedFunctionChart.Legends.Add(legend4);
             this.aggregatedFunctionChart.Location = new System.Drawing.Point(44, 250);
             this.aggregatedFunctionChart.Margin = new System.Windows.Forms.Padding(0);
             this.aggregatedFunctionChart.Name = "aggregatedFunctionChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.aggregatedFunctionChart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.aggregatedFunctionChart.Series.Add(series4);
             this.aggregatedFunctionChart.Size = new System.Drawing.Size(688, 356);
             this.aggregatedFunctionChart.TabIndex = 2;
-            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title1.Name = "aggregatedFunctionChartTitle";
-            this.aggregatedFunctionChart.Titles.Add(title1);
+            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title2.Name = "aggregatedFunctionChartTitle";
+            this.aggregatedFunctionChart.Titles.Add(title2);
             // 
             // ruleEvaluationResultListBox
             // 
@@ -575,6 +541,24 @@
             this.fuzzificationResultListBox.Size = new System.Drawing.Size(688, 95);
             this.fuzzificationResultListBox.TabIndex = 0;
             // 
+            // linguisticVariableNameColumn
+            // 
+            this.linguisticVariableNameColumn.HeaderText = "Name";
+            this.linguisticVariableNameColumn.Name = "linguisticVariableNameColumn";
+            this.linguisticVariableNameColumn.ReadOnly = true;
+            // 
+            // linguisticVariableValueColumn
+            // 
+            this.linguisticVariableValueColumn.HeaderText = "Value";
+            this.linguisticVariableValueColumn.Name = "linguisticVariableValueColumn";
+            this.linguisticVariableValueColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // linguisticVariableUnitColumn
+            // 
+            this.linguisticVariableUnitColumn.HeaderText = "Unit";
+            this.linguisticVariableUnitColumn.Name = "linguisticVariableUnitColumn";
+            this.linguisticVariableUnitColumn.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,7 +566,7 @@
             this.ClientSize = new System.Drawing.Size(883, 661);
             this.Controls.Add(this.tabControl);
             this.Name = "MainForm";
-            this.Text = "Wnioskowanie";
+            this.Text = "Fuzzy logic inference";
             this.tabControl.ResumeLayout(false);
             this.mainTabPage.ResumeLayout(false);
             this.mainTabPage.PerformLayout();
@@ -625,9 +609,6 @@
         private System.Windows.Forms.Label x1UnitLabel;
         private System.Windows.Forms.DataVisualization.Charting.Chart membershipFunctionChart;
         private System.Windows.Forms.DataGridView inputValuesGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableNameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableValueColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableUnitColumn;
         private System.Windows.Forms.ListBox rulesListBox;
         private System.Windows.Forms.Label rulesLabel;
         private System.Windows.Forms.Label inputValuesLabel;
@@ -642,6 +623,9 @@
         private System.Windows.Forms.CheckBox ignoreX1Checkbox;
         private System.Windows.Forms.CheckBox includeX3CheckBox;
         private System.Windows.Forms.CheckBox includeX2CheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableValueColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn linguisticVariableUnitColumn;
     }
 }
 

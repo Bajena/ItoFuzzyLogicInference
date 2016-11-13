@@ -52,17 +52,17 @@ namespace InferenceLibrary.Rules
         {
             get {
                 var builder = new StringBuilder();
-                builder.Append("JEŻELI ");
+                builder.Append("IF ");
                 var condTexts = Conditions.Select(
                     c =>
                         string.Format("{0} {1} {2}", c.MembershipFunction.LinguisticVariable.DisplayName,
-                                                     c.Negated ? "NIE JEST" : "JEST",
+                                                     c.Negated ? "IS NOT" : "IS",
                                                      c.MembershipFunction.DisplayName));
 
-                builder.Append(string.Join(RuleOperator == ERuleOperator.And ? " I " : " LUB ", condTexts));
-                builder.Append(" TO ");
+                builder.Append(string.Join(RuleOperator == ERuleOperator.And ? " AND " : " OR ", condTexts));
+                builder.Append(" THEN ");
                 builder.Append(
-                    $"{Conclusion.MembershipFunction.LinguisticVariable.DisplayName} JEST {Conclusion.MembershipFunction.DisplayName}");
+                    $"{Conclusion.MembershipFunction.LinguisticVariable.DisplayName} IS {Conclusion.MembershipFunction.DisplayName}");
 
                 return builder.ToString();
             }
