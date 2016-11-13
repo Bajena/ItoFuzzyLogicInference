@@ -6,11 +6,11 @@ The application is split into two modules:
 
 1. InferenceLibrary - a module containing all classes required for performing the inference.
 
-* It uses trapezoid membership functions with multiple configuration options (Inverted trapezoid, possibility to include/exclude border values, possibility to use infinite left/right ranges)
-* It performs deffuziffication using Mean of Maxima method
-* It allows defining fuzzy rules and optionally: negate conditions, define join operator (or/and)
-* It allows displaying all inference steps thanks to the `InferenceDetails` class
-* It allows loading a custom xml file thanks to the `InferenceFactory` class
+- Uses trapezoid membership functions with multiple configuration options (Inverted trapezoid, possibility to include/exclude border values, possibility to use infinite left/right ranges)
+- Performs deffuziffication using Mean of Maxima method
+- Allows defining fuzzy rules and optionally: negate conditions, define join operator (or/and)
+- Allows displaying all inference steps thanks to the `InferenceDetails` class
+- Allows loading a custom xml file thanks to the `InferenceFactory` class
 
 Here's a class diagram of the library:
 ![classdiagram1](https://cloud.githubusercontent.com/assets/5732023/20246110/276b7222-a9b0-11e6-802a-30ea9a39121d.png)
