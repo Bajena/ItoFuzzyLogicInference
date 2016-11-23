@@ -44,7 +44,7 @@
     </LinguisticVariable>
     
     <LinguisticVariable id="c4" display_name="Wiek" display_unit="lata">
-      <MembershipFunction id="c4_young" display_name="Młody" x1="0" x2="25" x3="25" x4="30" inverse_trapezoid="true"/>
+      <MembershipFunction id="c4_young" display_name="Młody" x1="0" x2="25" x3="25" x4="25"  ignore_x4="true" inverse_trapezoid="true"/>
       <MembershipFunction id="c4_middle" display_name="Średni" x1="20" x2="40" x3="40" x4="60"/>
       <MembershipFunction id="c4_old" display_name="Stary" x1="40" x2="80" x3="80" x4="80" ignore_x4="true"/>
     </LinguisticVariable>
