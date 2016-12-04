@@ -12,7 +12,7 @@ namespace ItoFuzzyLogicInference
         {
             var result = FuzzyInference.Infere();
             var variable = CurrentVariable();
-            MessageBox.Show(this, $"Wynik to: {result} {variable.DisplayUnit}");
+            MessageBox.Show(this, $"Result is: {result} {variable.DisplayUnit}");
             DisplayFuzzificationResults();
             tabControl.SelectTab(resultsTabPage);
         }
@@ -38,8 +38,8 @@ namespace ItoFuzzyLogicInference
             }
 
 
-            var functionSeries = new Series("Zagregowana f. przynależności") { ChartType = SeriesChartType.Line, BorderWidth = 2 };
-            var resultSeries = new Series($"Wynik: {InferenceDetails.Instance.Result.X}") { ChartType = SeriesChartType.Point, MarkerBorderWidth = 10 };
+            var functionSeries = new Series("Aggregated membership function") { ChartType = SeriesChartType.Line, BorderWidth = 2 };
+            var resultSeries = new Series($"Result: {InferenceDetails.Instance.Result.X}") { ChartType = SeriesChartType.Point, MarkerBorderWidth = 10 };
             foreach (var point in InferenceDetails.Instance.AggregatedFunction)
             {
                 functionSeries.Points.AddXY(point.X, point.Y);

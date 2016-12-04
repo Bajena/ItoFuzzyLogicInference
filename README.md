@@ -1,5 +1,6 @@
 # Fuzzy Logic Inference
-![pl_gif](https://cloud.githubusercontent.com/assets/5732023/20246236/0b06d02e-a9b3-11e6-9b5e-89a0f5d6e547.gif)
+
+![ang_gif](https://cloud.githubusercontent.com/assets/5732023/20246240/34e6cc28-a9b3-11e6-8ae0-a7127a467666.gif)
 
 This project was created as an academic excercise related to fuzzy logic inference (Inteligent Calculation Methods on Warsaw University of Technology).
 

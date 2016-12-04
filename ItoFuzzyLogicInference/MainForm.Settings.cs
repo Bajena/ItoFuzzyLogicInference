@@ -15,7 +15,7 @@ namespace ItoFuzzyLogicInference
             var parseSuccess = double.TryParse(textBox.Text, out parseResult);
             if (!parseSuccess)
             {
-                MessageBox.Show(this, "Proszę wpisać liczbę rzeczywistą");
+                MessageBox.Show(this, "Please enter a real number");
                 e.Cancel = true;
             }
         }
@@ -116,17 +116,17 @@ namespace ItoFuzzyLogicInference
         {
             if (inverseTrapezoid)
             {
-                x1Label.Text = "x1 (lewa 1):";
-                x2Label.Text = "x2 (lewe 0):";
-                x3Label.Text = "x3 (prawe 0):";
-                x4Label.Text = "x4 (prawa 1):";
+                x1Label.Text = "x1 (left 1):";
+                x2Label.Text = "x2 (left 0):";
+                x3Label.Text = "x3 (right 0):";
+                x4Label.Text = "x4 (right 1):";
             }
             else
             {
-                x1Label.Text = "x1 (lewe 0):";
-                x2Label.Text = "x2 (lewa 1):";
-                x3Label.Text = "x3 (prawa 1):";
-                x4Label.Text = "x4 (prawe 0):";
+                x1Label.Text = "x1 (left 0):";
+                x2Label.Text = "x2 (left 1):";
+                x3Label.Text = "x3 (right 1):";
+                x4Label.Text = "x4 (right 0):";
             }
         }
 
